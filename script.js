@@ -1,8 +1,16 @@
-10.04 8:58 am
-const toggleBtn = document.getElementById("theme-toggle");
-toggleBtn.addEventListener("click", () => {
+// Dark mode toggle
+const themeBtn = document.getElementById("theme-toggle");
+themeBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  toggleBtn.textContent = document.body.classList.contains("dark")
-    ? "☀️ Light Mode"
-    : " Dark Mode";
+  themeBtn.textContent = 
+    document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+});
+
+// Expand/Collapse description
+document.querySelectorAll(".toggle-desc").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const desc = btn.nextElementSibling;
+    desc.classList.toggle("hidden");
+    btn.textContent = desc.classList.contains("hidden") ? "View Details" : "Hide Details";
+  });
 });
