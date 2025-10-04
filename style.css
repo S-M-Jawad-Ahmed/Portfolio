@@ -1,4 +1,3 @@
-/* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -35,6 +34,46 @@ header button {
   font-size: 1.2rem;
 }
 
+.projects { padding: 2rem; }
+
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.card:hover { transform: translateY(-5px); }
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-content {
+  padding: 1rem;
+}
+.card h3 { margin-bottom: 0.3rem; }
+
+/* hidden panel */
+.panel {
+  display: none;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+}
+.panel ul { list-style: none; margin-top: 0.5rem; }
+.panel li { margin: 0.3rem 0; }
+.panel a { color: #007bff; text-decoration: none; }
+.panel a:hover { text-decoration: underline; }
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--card-bg);
+  margin-top: 2rem;
+    }
 .projects { padding: 2rem; }
 
 .card {
