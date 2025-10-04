@@ -5,7 +5,7 @@ themeBtn.addEventListener("click", () => {
   themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
-// Expand panel on card click
+// Card expand/collapse
 document.querySelectorAll(".card").forEach(card => {
   card.addEventListener("click", () => {
     const panel = card.querySelector(".panel");
