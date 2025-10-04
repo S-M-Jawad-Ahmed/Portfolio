@@ -1,256 +1,67 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Jawad Ahmed — Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S. M. Jawad Ahmed | Data Analyst Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Cyclistic case study: SQL, R, Tableau, recommendations.">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-row">
-      <div class="brand">
-        <h1>Jawad Ahmed</h1>
-        <p class="tag">Data Analyst · SQL · R · Tableau · Python</p>
-      </div>
-
-      <div class="header-controls">
-        <nav class="main-nav">
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-      </div>
-    </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <h2>Portfolio — Case studies & dashboards</h2>
-          <p class="lead">Cyclistic bike-share case study: analysis of 5.64M rides (Sep 2024–Aug 2025). SQL snapshots, R visualizations, Tableau dashboard and actionable recommendations for membership growth.</p>
-          <p class="cta-row">
-            <a class="btn" href="#projects">View Project</a>
-            <a class="btn ghost" href="assets/pdfs/Cyclistic_Report.pdf" target="_blank" rel="noopener">Download Report (PDF)</a>
-          </p>
-        </div>
-        <div class="hero-right">
-          <img src="assets/images/cyclistic.png" alt="Cyclistic dashboard preview" />
-        </div>
-      </div>
-    </section>
+  <section id="home">
+    <h1 class="typing">Hi, I’m S. M. Jawad Ahmed</h1>
+    <p>Aspiring Data Analyst | SQL | Tableau | Python | Power BI</p>
+  </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="projects section container">
-      <h2>Featured Project</h2>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Brief description here...</p>
+  </section>
 
-      <!-- Single project card -->
-      <article class="card featured" data-project="cyclistic">
-        <div class="card-media">
-          <img src="assets/images/cyclistic.png" alt="Cyclistic screenshot">
-        </div>
-        <div class="card-body">
-          <h3>Cyclistic — Member vs Casual Case Study</h3>
-          <p class="muted">Analysis of rider behavior, trip durations, seasonality and fleet insights (Sep 2024 → Aug 2025).</p>
-        </div>
-        <!-- hidden detail pane (expands on click) -->
-        <div class="card-panel" aria-hidden="true">
-          <div class="panel-inner">
-            <p>End-to-end analysis using: BigQuery (SQL), Python (Colab) for ingestion, R (tidyverse + ggplot2) for EDA and visualization, and Tableau for an interactive executive dashboard.</p>
-
-            <!-- Embedded Tableau (your code inserted verbatim, with responsive sizing) -->
-            <div class="embed-wrap">
-              <div class='tableauPlaceholder' id='viz1759569206233' style='position: relative'>
-                <noscript>
-                  <a href='#'>
-                    <img alt='Divvy Bike Share Analysis'
-                         src='https://public.tableau.com/static/images/ca/case_study_17590514598370/DivvyBikeShareAnalysis/1_rss.png'
-                         style='border: none' />
-                  </a>
-                </noscript>
-                <object class='tableauViz' style='display:none;'>
-                  <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                  <param name='embed_code_version' value='3' />
-                  <param name='site_root' value='' />
-                  <param name='name' value='case_study_17590514598370/DivvyBikeShareAnalysis' />
-                  <param name='tabs' value='no' />
-                  <param name='toolbar' value='yes' />
-                  <param name='static_image' value='https://public.tableau.com/static/images/ca/case_study_17590514598370/DivvyBikeShareAnalysis/1.png' />
-                  <param name='animate_transition' value='yes' />
-                  <param name='display_static_image' value='yes' />
-                  <param name='display_spinner' value='yes' />
-                  <param name='display_overlay' value='yes' />
-                  <param name='display_count' value='yes' />
-                  <param name='language' value='en-US' />
-                </object>
-              </div>
-              <script type='text/javascript'>
-                (function() {
-                  var divElement = document.getElementById('viz1759569206233');
-                  var vizElement = divElement.getElementsByTagName('object')[0];
-                  function setVizSize(){
-                    if (divElement.offsetWidth > 1100) {
-                      vizElement.style.width='100%'; vizElement.style.height='727px';
-                    } else if (divElement.offsetWidth > 700) {
-                      vizElement.style.width='100%'; vizElement.style.height='727px';
-                    } else {
-                      vizElement.style.width='100%'; vizElement.style.height='1400px';
-                    }
-                  }
-                  setVizSize();
-                  window.addEventListener('resize', setVizSize);
-                  var scriptElement = document.createElement('script');
-                  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                  vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                })();
-              </script>
-            </div>
-
-            <ul class="links-list">
-              <li><a href="assets/pdfs/Cyclistic_Report.pdf" target="_blank" rel="noopener">📄 Read Report (PDF)</a></li>
-              <li><a href="https://github.com/YOUR_USERNAME/YOUR_REPO" target="_blank" rel="noopener">💻 Code (GitHub)</a></li>
-              <li><a href="assets/images/cyclistic.png" target="_blank" rel="noopener">🖼️ Images</a></li>
-            </ul>
-
-            <!-- small audit & quick stats block (static text; you can update) -->
-            <div class="quick-stats">
-              <div><strong>Total rides</strong><span>5,640,202</span></div>
-              <div><strong>Members</strong><span>63%</span></div>
-              <div><strong>Casual</strong><span>37%</span></div>
-            </div>
-
-          </div>
-        </div>
-      </article>
-
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section about container">
-      <h2>About</h2>
-      <p>
-        Data analyst experienced in working with large mobility datasets. Tools used on this project:
-        BigQuery (SQL), Python (Colab), R (tidyverse, ggplot2), and Tableau.
-      </p>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section container contact">
-      <h2>Contact</h2>
-      <p>Email: sheikhmuhammadjawadahmed001@gmail.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank">linkedin.com/in/YOUR_PROFILE</a></p>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>© 2025 Jawad Ahmed • Portfolio</small>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <img src="assets/images/project1.png" alt="Project 1">
+      <h3>Project Title</h3>
+      <p>Tools: Tableau, Excel</p>
     </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>SQL</li>
+      <li>Tableau</li>
+      <li>Power BI</li>
+      <li>Python / R</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="#" method="POST">
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 S. M. Jawad Ahmed. All Rights Reserved.</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
-      </html>    <section id="projects" class="projects section container">
-      <h2>Projects</h2>
-      <div class="grid">
-
-        <!-- Cyclistic card -->
-        <article class="card" data-project="cyclistic">
-          <div class="card-media">
-            <img src="assets/images/cyclistic.png" alt="Cyclistic dashboard screenshot">
-          </div>
-          <div class="card-body">
-            <h3>Cyclistic — Member vs Casual Case Study</h3>
-            <p class="muted">Analysis of 5.64M rides (Sep 2024 → Aug 2025), with SQL, R, Tableau, and recommendations for converting casual riders to members.</p>
-          </div>
-          <!-- hidden panel -->
-          <div class="card-panel" aria-hidden="true">
-            <div class="panel-inner">
-              <p>Deep analysis on rider behavior, trip duration, and seasonal trends. Identified opportunities to increase membership by targeting high-usage casual riders.</p>
-
-              <!-- Tableau embed -->
-              <div class="embed-wrap">
-                <div class='tableauPlaceholder' id='viz1759569206233' style='position: relative'>
-                  <noscript>
-                    <a href='#'>
-                      <img alt='Divvy Bike Share Analysis'
-                           src='https://public.tableau.com/static/images/ca/case_study_17590514598370/DivvyBikeShareAnalysis/1_rss.png'
-                           style='border: none'/>
-                    </a>
-                  </noscript>
-                  <object class='tableauViz' style='display:none;'>
-                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
-                    <param name='embed_code_version' value='3'/>
-                    <param name='site_root' value=''/>
-                    <param name='name' value='case_study_17590514598370/DivvyBikeShareAnalysis'/>
-                    <param name='tabs' value='no'/>
-                    <param name='toolbar' value='yes'/>
-                    <param name='static_image' value='https://public.tableau.com/static/images/ca/case_study_17590514598370/DivvyBikeShareAnalysis/1.png'/>
-                    <param name='animate_transition' value='yes'/>
-                    <param name='display_static_image' value='yes'/>
-                    <param name='display_spinner' value='yes'/>
-                    <param name='display_overlay' value='yes'/>
-                    <param name='display_count' value='yes'/>
-                    <param name='language' value='en-US'/>
-                  </object>
-                </div>
-                <script type='text/javascript'>
-                  var divElement = document.getElementById('viz1759569206233');
-                  var vizElement = divElement.getElementsByTagName('object')[0];
-                  if (divElement.offsetWidth > 800) {
-                    vizElement.style.width='100%'; vizElement.style.height='727px';
-                  } else if (divElement.offsetWidth > 500) {
-                    vizElement.style.width='100%'; vizElement.style.height='727px';
-                  } else {
-                    vizElement.style.width='100%'; vizElement.style.height='2227px';
-                  }
-                  var scriptElement = document.createElement('script');
-                  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                  vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                </script>
-              </div>
-
-              <ul class="links-list">
-                <li><a href="assets/pdfs/Cyclistic_Report.pdf" target="_blank" rel="noopener">📄 Read Report (PDF)</a></li>
-                <li><a href="https://github.com/YOUR_USERNAME/YOUR_REPO" target="_blank" rel="noopener">💻 Code (GitHub)</a></li>
-                <li><a href="assets/images/cyclistic.png" target="_blank" rel="noopener">🖼️ Images</a></li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section about container">
-      <h2>About</h2>
-      <p>
-        I am a data analyst focused on extracting actionable insights from large datasets.  
-        Skills: SQL (BigQuery), Python (Colab), R (tidyverse, ggplot2), Tableau, and Power BI.  
-        Passionate about solving business problems through data storytelling.
-      </p>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section container contact">
-      <h2>Contact</h2>
-      <p>Email: sheikhmuhammadjawadahmed001@gmail.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank">linkedin.com/in/YOUR_PROFILE</a></p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>© 2025 Jawad Ahmed • Portfolio</small>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-  </html>
+</html>
