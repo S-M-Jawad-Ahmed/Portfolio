@@ -1,30 +1,49 @@
 ---
 title: "Cyclistic Case Study – Member vs Casual Riders Analysis"
-date: "2020-09-01"
-stack: ["SQL", "R", "Tableau", "Excel"]
+date: "2025-09-01"
+stack: ["SQL (BigQuery)", "R (tidyverse, ggplot2)", "Tableau", "Python"]
 slug: "cyclistic-case-study"
-featuredImage: "../static/images/cyclistic-case-study.jpg" # Image path in static folder
+featuredImage: "../static/images/cyclistic-case-study.jpg" 
 ---
 
-## Project Overview
+## Executive Summary
+[cite_start]I analyzed **5.64 million Cyclistic trips** from September 2024 to August 2025 to identify differences in usage between annual members and casual riders[cite: 1, 2]. [cite_start]The primary goal was to uncover patterns in ridership behavior to provide actionable recommendations for **increasing annual memberships**[cite: 3, 4].
 
-Conducted a comprehensive analysis of 12 months (Sep-2024– Aug-2025) of Divvy bike share data to understand rider behavior and trends. The primary goal was to identify key differences between annual members and casual riders to inform marketing strategies aimed at converting casual riders into members.
+## Key Insights
 
-## Key Techniques & Tools Used
-1.  **Data Extraction & Cleaning:** Used **SQL** to query, clean, and consolidate 12 separate datasets, ensuring data integrity and consistency. Handled null values, performed type conversions, and generated ride length and day-of-week fields.
-2.  **Exploratory Data Analysis (EDA):** Leveraged **R** for statistical analysis, focusing on mean, median, max trip durations, and rider counts segmented by rideable type, day of the week, and month.
-3.  **Visualization & Reporting:** Created interactive dashboards in **Tableau** to visualize key insights, including membership vs. casual rider patterns, popular routes, and seasonal trends.
+### 1. Rider Distribution & Trip Duration
+* [cite_start]**Rider Split:** Members accounted for **63.25%** (approx. 3.57 million) of total trips, while casual riders made up **36.75%** (approx. 2.07 million)[cite: 18, 19].
+* [cite_start]**Trip Length:** Casual riders average **19.4 minutes** per trip, significantly longer than members' **11.8 minutes**[cite: 22].
+* [cite_start]**Long Trips:** **27.0%** of casual trips exceeded 20 minutes, compared to only **13.6%** for members[cite: 23].
 
-## Actionable Insights
-* Casual riders ride longer on weekends, while members use the service more during the weekday commute.
-* Casual riders favor electric and classic bikes more than docked bikes.
-* The highest casual ridership occurs during summer months, presenting an ideal conversion opportunity.
+### 2. Weekday vs Weekend Trends
+* [cite_start]**Leisure Focus:** **16.5%** of casual trips occur on weekends between 10:00 and 17:00, indicating a strong link to leisure and tourist activity[cite: 25].
+* [cite_start]**Commuter Focus:** Members predominantly ride during **weekdays**, especially during peak hours, suggesting they are mostly commuters[cite: 26].
+
+### 3. Seasonal Trends
+* [cite_start]**Peak Season:** Ridership peaked in **September** (474K member trips, 345K casual trips)[cite: 31].
+* [cite_start]**Seasonal Drop:** Ridership drops sharply after September and continues through the winter months, reflecting reduced demand in colder weather[cite: 32].
+
+## Data and Tools Used
+
+| Category | Tools & Details |
+| :--- | :--- |
+| **Data Source** | [cite_start]Divvy trip data from September 2024 to August 2025[cite: 5]. [cite_start]**5,640,202** trips were analyzed[cite: 1]. |
+| **Cleaning & Processing** | [cite_start]**Python (Colab)** for bulk loading, **BigQuery (SQL)** for cleaning, aggregation, and snapshot creation[cite: 8]. |
+| **Analysis & Visualization** | [cite_start]**R (tidyverse, ggplot2)** for exploratory analysis, and **Tableau Desktop** for the interactive dashboard and storytelling[cite: 9]. |
+| **Cleaning Audit** | [cite_start]Invalid/null timestamps, negative durations, and long trips (>120 min) were handled; features like weekday, month, and season were derived[cite: 11, 12, 13]. |
+
+## Key Recommendations (Actionable Steps)
+
+1.  [cite_start]**Convert Casuals to Members:** Target frequent casual riders (e.g., $\ge3$ rides/month or $\ge60$ minutes/month) with a **Weekend Pass upgrade discount** valid for 30 days[cite: 35, 34].
+2.  [cite_start]**Optimize Fleet:** Increase the supply of **electric bikes** in high-demand areas (Electric bikes represent 59.4% of total trips)[cite: 36, 29].
+3.  [cite_start]**Seasonal Promotions:** Launch major campaigns in **September** (peak season) and offer special incentives during **winter** to mitigate the seasonal drop in ridership[cite: 38, 39].
 
 ## Project Deliverables & Links
 
 | Deliverable | Description | Link Placeholder |
 | :--- | :--- | :--- |
-| **PDF Report** | Detailed findings, recommendations, and methodologies. | [Link to PDF Report] |
-| **Tableau Dashboard** | Interactive data visualization dashboard. | [Link to Embedded Tableau Dashboard] |
-| **Processed Dataset** | Cleaned and aggregated dataset used for final analysis. | [Link to Processed Dataset Download] |
-| **Original Dataset** | Raw data source link (if publicly available). | [Link to Original Dataset] |
+| **PDF Report** | The complete 10-page analysis, findings, and recommendations. | [Link to PDF Report] |
+| **Tableau Dashboard** | Interactive dashboard for stakeholder review. | [Link to Embedded Tableau Dashboard] |
+| **Processed Dataset** | [cite_start]The cleaned and feature-engineered Parquet/CSV dataset used for analysis[cite: 5]. | [Link to Processed Dataset Download] |
+| **Original Dataset** | [cite_start]Link to the official raw data source (Divvy portal)[cite: 6]. | [Link to Original Dataset] |
