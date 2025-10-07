@@ -11,7 +11,7 @@
     nav { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; padding:22px 32px; }
     .nav-title { font-size:2.2em; font-weight:800; color:#007acc; letter-spacing:1px; text-decoration:none; transition:color 0.2s; }
     .nav-title:hover { color:#005f99; }
-    .nav-links { display:flex; gap:36px; }
+    .nav-links { display:flex; gap:36px; background:none; box-shadow:none; }
     .nav-link { color:#333; font-weight:500; text-decoration:none; position:relative; font-size:1.08em; padding:2px 0; transition:color 0.2s; }
     .nav-link:hover, .nav-link.active { color:#007acc; }
     .nav-link.active::after { content:''; display:block; height:3px; background:linear-gradient(90deg,#007acc,#00c6fb); width:100%; position:absolute; left:0; bottom:-6px; border-radius:2px; animation:underlineGrow 0.4s; }
@@ -93,6 +93,8 @@
       document.querySelectorAll('.about-text').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
       document.querySelectorAll('.back-link').forEach(e => e.style.background = dark ? '#005f99' : '#007acc');
       document.querySelectorAll('.back-link').forEach(e => e.style.color = dark ? '#fff' : '#fff');
+      document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? '#23272f' : '#fff');
+      document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
       modeToggle.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
       modeToggle.style.background = dark ? '#23272f' : '#eee';
       modeToggle.style.color = dark ? '#e2e6ed' : '#222';
