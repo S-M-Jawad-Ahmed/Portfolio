@@ -190,6 +190,9 @@
       document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
     }
+    modeToggle.addEventListener('click', function() {
+      setMode(!darkMode);
+    });
     // On page load, always apply saved dark mode
     document.addEventListener('DOMContentLoaded', function() {
       const savedMode = localStorage.getItem('darkMode');
