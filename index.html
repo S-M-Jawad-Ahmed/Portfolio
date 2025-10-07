@@ -248,9 +248,9 @@
     @media (max-width: 700px) {
       nav { flex-direction: row; align-items: center; padding: 8px 4px; position: relative; }
       .nav-title { font-size: 1.2em; margin-bottom: 0; }
-      #mode-toggle { position: absolute; right: 16px; top: 16px; margin: 0; width: auto; }
-      #menu-toggle { display: block; }
-      .nav-links { display: none; position: absolute; left: 0; top: 56px; background: #fff; box-shadow: 0 8px 32px rgba(0,0,0,0.09); border-radius: 0 0 18px 18px; width: 100vw; flex-direction: column; gap: 0; z-index: 1001; animation: slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
+      #mode-toggle { position: absolute; right: 16px; top: 16px; margin: 0; width: auto; z-index: 1200; }
+      #menu-toggle { display: block; z-index: 1201; }
+      .nav-links { display: none; position: absolute; left: 0; top: 56px; background: #fff; box-shadow: 0 8px 32px rgba(0,0,0,0.09); border-radius: 0 0 18px 18px; width: 100vw; flex-direction: column; gap: 0; z-index: 1200; animation: slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
       .nav-links.open { display: flex; }
       .nav-link, .nav-title { font-size: 1em; padding: 18px 24px; width: 100%; text-align: left; }
       .nav-link { border-bottom: 1px solid #eee; }
@@ -320,7 +320,7 @@
       document.querySelectorAll('.card-excerpt').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
       document.querySelectorAll('.read-more-link').forEach(e => e.style.color = dark ? '#00c6fb' : '#00c6fb');
       document.querySelectorAll('.skills-grid .skill-item').forEach(e => {
-        e.style.background = dark ? 'linear-gradient(90deg, #23272f 0%, #181c24 100%)' : 'linear-gradient(90deg, #e3f0ff 0%, #c2e9fb 100%)';
+        e.style.background = dark ? '#23272f' : 'linear-gradient(90deg, #e3f0ff 0%, #c2e9fb 100%)';
         e.style.color = dark ? '#00c6fb' : '#007acc';
       });
       document.querySelector('.action-button').style.background = dark ? 'linear-gradient(90deg,#005f99,#00b6e6)' : 'linear-gradient(90deg,#007acc,#00c6fb)';
