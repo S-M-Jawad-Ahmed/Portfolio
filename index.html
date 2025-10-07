@@ -324,15 +324,12 @@
       document.querySelectorAll('.card-excerpt').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
       document.querySelectorAll('.read-more-link').forEach(e => e.style.color = dark ? '#00c6fb' : '#00c6fb');
       document.querySelectorAll('.skills-grid .skill-item').forEach(e => {
-        e.style.background = dark ? '#23272f' : 'linear-gradient(90deg, #e3f0ff 0%, #c2e9fb 100%)';
+        e.style.background = dark ? 'transparent' : 'linear-gradient(90deg, #e3f0ff 0%, #c2e9fb 100%)';
         e.style.color = dark ? '#00c6fb' : '#007acc';
         e.style.boxShadow = dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 4px 16px rgba(0,0,0,0.09)';
       });
-      document.querySelectorAll('.skills-grid').forEach(e => e.style.background = dark ? '#23272f' : '');
-      document.querySelector('.action-button').style.background = dark ? 'linear-gradient(90deg,#005f99,#00b6e6)' : 'linear-gradient(90deg,#007acc,#00c6fb)';
-      document.querySelector('.action-button').style.color = dark ? '#fff' : '#fff';
-      // Mobile dropdown text color
-      document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? '#23272f' : '#fff');
+      document.querySelectorAll('.skills-grid').forEach(e => e.style.background = dark ? 'transparent' : '');
+      document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? 'transparent' : '#fff');
       document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
     }
