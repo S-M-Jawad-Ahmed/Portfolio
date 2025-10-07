@@ -7,37 +7,10 @@
   <link rel="stylesheet" href="../../styles.773fc3ddad0cc4eae39b.css">
   <style>
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-      background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
-      min-height: 100vh;
-      color: #222;
-    }
-    header {
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      animation: fadeInDown 1s;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 18px 24px;
-    }
-    .nav-title {
-      font-size: 1.7em;
-      font-weight: 700;
-      color: #007acc;
-      letter-spacing: 1px;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+    body { margin: 0; font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%); min-height: 100vh; color: #222; }
+    header { background: rgba(255,255,255,0.95); box-shadow: 0 4px 16px rgba(0,0,0,0.07); position: sticky; top: 0; z-index: 1000; animation: fadeInDown 1s; }
+    nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 18px 24px; }
+    .nav-title { font-size: 1.7em; font-weight: 700; color: #007acc; letter-spacing: 1px; text-decoration: none; transition: color 0.2s; }
     .nav-title:hover { color: #005f99; }
     .nav-links { display: flex; gap: 32px; }
     .nav-link { color: #333; font-weight: 500; text-decoration: none; position: relative; transition: color 0.2s; }
@@ -59,13 +32,9 @@
     .recommendations h2 { margin-top: 0; }
     .back-link { background: #007acc; border-radius: 6px; color: #fff!important; display: inline-block; font-weight: 700; padding: 10px 24px; text-decoration: none; transition: background 0.2s; margin-top: 30px; }
     .back-link:hover { background: #005f99; }
+    .tableauPlaceholder { margin: 32px 0; }
     footer { border-top: 1px solid #dee2e6; color: #6c757d; font-size: 0.95em; margin-top: 60px; padding: 24px; text-align: center; background: #fff; }
-    @media (max-width: 700px) {
-      nav { flex-direction: column; gap: 10px; }
-      .main-content { padding: 10px; margin-top: 10px; }
-      .project-title { font-size: 1.2em; }
-      .project-featured-image { max-width: 100%; }
-    }
+    @media (max-width: 700px) { nav { flex-direction: column; gap: 10px; } .main-content { padding: 10px; margin-top: 10px; } .project-title { font-size: 1.2em; } .project-featured-image { max-width: 100%; } }
   </style>
 </head>
 <body>
@@ -76,7 +45,6 @@
         <a href="../../index.html#projects" class="nav-link">Projects</a>
         <a href="../../index.html#skills" class="nav-link">Skills</a>
         <a href="mailto:SheikhMuhammadJawadAhmed001@gmail.com" class="nav-link">Contact</a>
-        <a href="https://github.com/S-M-Jawad-Ahmed/Portfolio" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
       </div>
     </nav>
   </header>
@@ -85,57 +53,21 @@
     <img class="project-featured-image" src="../../static/bb462c9d162995f54086c46bba01ad65/ddb6f/cyclistic-case-study.png" alt="Cyclistic Case Study" />
     <div class="project-meta">Date: September 2025 &nbsp;|&nbsp; Stack: SQL (BigQuery), R (tidyverse, ggplot2), Tableau, Python</div>
     <div class="project-content">
-      <h2>Executive Summary</h2>
-      <p>I analyzed <strong>5.64 million Cyclistic trips</strong> from September 2024 to August 2025 to identify differences in usage between annual members and casual riders. The primary goal was to uncover patterns in ridership behavior to provide actionable recommendations for <strong>increasing annual memberships</strong>.</p>
-      <h2>Key Insights</h2>
-      <h3>1. Rider Distribution & Trip Duration</h3>
-      <ul>
-        <li><strong>Rider Split:</strong> Members accounted for <strong>63.25%</strong> (approx. 3.57 million) of total trips, while casual riders made up <strong>36.75%</strong> (approx. 2.07 million).</li>
-        <li><strong>Trip Length:</strong> Casual riders average <strong>19.4 minutes</strong> per trip, significantly longer than members' <strong>11.8 minutes</strong>.</li>
-        <li><strong>Long Trips:</strong> <strong>27.0%</strong> of casual trips exceeded 20 minutes, compared to only <strong>13.6%</strong> for members.</li>
-      </ul>
-      <h3>2. Weekday vs Weekend Trends</h3>
-      <ul>
-        <li><strong>Leisure Focus:</strong> <strong>16.5%</strong> of casual trips occur on weekends between 10:00 and 17:00, indicating a strong link to leisure and tourist activity.</li>
-        <li><strong>Commuter Focus:</strong> Members predominantly ride during <strong>weekdays</strong>, especially during peak hours, suggesting they are mostly commuters.</li>
-      </ul>
-      <h3>3. Seasonal Trends</h3>
-      <ul>
-        <li><strong>Peak Season:</strong> Ridership peaked in <strong>September</strong> (474K member trips, 345K casual trips).</li>
-        <li><strong>Seasonal Drop:</strong> Ridership drops sharply after September and continues through the winter months, reflecting reduced demand in colder weather.</li>
-      </ul>
-      <h2>Data and Tools Used</h2>
-      <table>
-        <thead>
-          <tr><th>Category</th><th>Tools & Details</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>Data Source</strong></td><td>Divvy trip data from September 2024 to August 2025. <strong>5,640,202</strong> trips were analyzed.</td></tr>
-          <tr><td><strong>Cleaning & Processing</strong></td><td><strong>Python (Colab)</strong> for bulk loading, <strong>BigQuery (SQL)</strong> for cleaning, aggregation, and snapshot creation.</td></tr>
-          <tr><td><strong>Analysis & Visualization</strong></td><td><strong>R (tidyverse, ggplot2)</strong> for exploratory analysis, and <strong>Tableau Desktop</strong> for the interactive dashboard and storytelling.</td></tr>
-          <tr><td><strong>Cleaning Audit</strong></td><td>Invalid/null timestamps, negative durations, and long trips (>120 min) were handled; features like weekday, month, and season were derived.</td></tr>
-        </tbody>
-      </table>
-      <div class="recommendations">
-        <h2>Key Recommendations (Actionable Steps)</h2>
-        <ol>
-          <li><strong>Convert Casuals to Members:</strong> Target frequent casual riders (e.g., ≥3 rides/month or ≥60 minutes/month) with a <strong>Weekend Pass upgrade discount</strong> valid for 30 days.</li>
-          <li><strong>Optimize Fleet:</strong> Increase the supply of <strong>electric bikes</strong> in high-demand areas (Electric bikes represent 59.4% of total trips).</li>
-          <li><strong>Seasonal Promotions:</strong> Launch major campaigns in <strong>September</strong> (peak season) and offer special incentives during <strong>winter</strong> to mitigate the seasonal drop in ridership.</li>
-        </ol>
-      </div>
-      <h2>Project Deliverables & Links</h2>
+      <h2>Short Summary</h2>
+      <p>This project analyzes 5.64 million Cyclistic bike trips to compare annual members and casual riders, uncovering key patterns and actionable recommendations to increase memberships and optimize fleet usage.</p>
+      <h2>Project Links</h2>
       <table>
         <thead>
           <tr><th>Deliverable</th><th>Description</th><th>Link</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>PDF Report</strong></td><td>The complete 10-page analysis, findings, and recommendations.</td><td><a href="#" style="color:#007acc;text-decoration:underline;">Download PDF</a></td></tr>
-          <tr><td><strong>Tableau Dashboard</strong></td><td>Interactive dashboard for stakeholder review.</td><td><a href="#" style="color:#007acc;text-decoration:underline;">View Dashboard</a></td></tr>
-          <tr><td><strong>Processed Dataset</strong></td><td>The cleaned and feature-engineered Parquet/CSV dataset used for analysis.</td><td><a href="#" style="color:#007acc;text-decoration:underline;">Download Dataset</a></td></tr>
-          <tr><td><strong>Original Dataset</strong></td><td>Link to the official raw data source (Divvy portal).</td><td><a href="#" style="color:#007acc;text-decoration:underline;">View Source</a></td></tr>
+          <tr><td><strong>Original Data Source</strong></td><td>Official Divvy trip data (raw).</td><td><a href="https://divvy-tripdata.s3.amazonaws.com/index.html" target="_blank" style="color:#007acc;text-decoration:underline;">View Source</a></td></tr>
+          <tr><td><strong>Processed Dataset</strong></td><td>Cleaned and feature-engineered dataset (coming soon).</td><td><span style="color:#aaa;">Not available yet</span></td></tr>
+          <tr><td><strong>PDF Report</strong></td><td>Full analysis and recommendations (coming soon).</td><td><span style="color:#aaa;">Not available yet</span></td></tr>
+          <tr><td><strong>Tableau Dashboard</strong></td><td>Interactive dashboard (embedded below).</td><td><span style="color:#aaa;">See below</span></td></tr>
         </tbody>
       </table>
+      <div class='tableauPlaceholder' id='viz1759840622061' style='position: relative'><noscript><a href='#'><img alt='Divvy Bike Share Analysis ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ca&#47;case_study_17590514598370&#47;DivvyBikeShareAnalysis&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='case_study_17590514598370&#47;DivvyBikeShareAnalysis' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ca&#47;case_study_17590514598370&#47;DivvyBikeShareAnalysis&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1759840622061');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1300px';vizElement.style.height='727px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1300px';vizElement.style.height='727px';} else { vizElement.style.width='100%';vizElement.style.height='2227px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
       <a href="../../index.html#projects" class="back-link">← Back to Projects</a>
     </div>
   </main>
