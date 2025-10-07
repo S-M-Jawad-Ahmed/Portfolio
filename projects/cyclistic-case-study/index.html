@@ -191,12 +191,14 @@
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
     }
     // On page load, always apply saved dark mode
-    const savedMode = localStorage.getItem('darkMode');
-    if (savedMode !== null) {
-      setMode(savedMode === '1', false);
-    } else {
-      setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedMode = localStorage.getItem('darkMode');
+      if (savedMode !== null) {
+        setMode(savedMode === '1', false);
+      } else {
+        setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
+      }
+    });
     // Hamburger menu for mobile nav
     const menuToggle = document.getElementById('menu-toggle');
     const navLinksContainer = document.getElementById('nav-links');
