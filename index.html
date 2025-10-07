@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>S.M. Jawad Ahmed | Data Analyst Portfolio</title>
+  <title>Home | Data Analyst Portfolio</title>
   <link rel="stylesheet" href="styles.773fc3ddad0cc4eae39b.css">
   <style>
     html { scroll-behavior: smooth; }
@@ -258,20 +258,21 @@
 <body>
   <header>
     <nav>
-      <a href="#hero" class="nav-title nav-link">S.M. Jawad Ahmed</a>
+  <a href="#hero" class="nav-title nav-link">Home</a>
       <div class="nav-links">
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="mailto:SheikhMuhammadJawadAhmed001@gmail.com" class="nav-link">Contact</a>
+  <a href="#projects" class="nav-link">Projects</a>
+  <a href="#skills" class="nav-link">Skills</a>
+  <a href="mailto:SheikhMuhammadJawadAhmed001@gmail.com" class="nav-link">Contact</a>
+  <button id="mode-toggle" aria-label="Toggle dark/light mode" style="margin-left:24px; background:#eee; border:none; border-radius:20px; padding:8px 18px; font-weight:700; cursor:pointer; color:#222; font-size:1em; transition:background 0.2s;">🌙 Dark Mode</button>
       </div>
     </nav>
   </header>
   <main class="main-content">
     <section id="hero" class="hero">
-      <canvas class="animated-bg" id="animated-bg"></canvas>
-      <h1 class="hero-title">Hi, I'm <span style="color:#007acc">Sheikh Muhammad Jawad Ahmed</span> <span role="img" aria-label="chart">📊</span></h1>
-      <p class="hero-subtitle">Data Analyst specializing in transforming raw data into actionable insights and robust reporting solutions using <b>SQL, R, and Tableau</b>.</p>
-      <a href="#projects" class="action-button">Explore My Work →</a>
+  <canvas class="animated-bg" id="animated-bg"></canvas>
+  <h1 class="hero-title">I'm <span style="color:#007acc">Sheikh Muhammad Jawad Ahmed</span></h1>
+  <p class="hero-subtitle">Data Analyst skilled in <b>SQL, R, Python, Excel, Tableau and Power BI</b>, transforming complex data into clear, actionable insights.</p>
+  <a href="#projects" class="action-button">Explore My Work →</a>
     </section>
     <section id="projects">
       <h2 class="section-title">Featured Data Analysis Projects</h2>
@@ -283,9 +284,45 @@
     </section>
   </main>
   <footer>
-    <p>© 2025 Sheikh Muhammad Jawad Ahmed | Built with Gatsby</p>
+  <p>© 2025 Sheikh Muhammad Jawad Ahmed</p>
   </footer>
   <script>
+    // Dark/Light mode toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    let darkMode = false;
+    function setMode(dark) {
+      darkMode = dark;
+      document.body.style.background = dark ? 'linear-gradient(120deg, #23272f 0%, #1a1d23 100%)' : 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)';
+      document.body.style.color = dark ? '#f3f3f3' : '#222';
+      document.querySelector('header').style.background = dark ? 'rgba(34,39,47,0.97)' : 'rgba(255,255,255,0.95)';
+      document.querySelector('footer').style.background = dark ? '#23272f' : '#fff';
+      document.querySelector('footer').style.color = dark ? '#b6c2d1' : '#6c757d';
+      document.querySelectorAll('.nav-title').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
+      document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#f3f3f3' : '#333');
+      document.querySelectorAll('.nav-link.active').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
+      document.querySelectorAll('.section-title').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
+      document.querySelectorAll('.project-card').forEach(e => {
+        e.style.background = dark ? '#23272f' : '#fff';
+        e.style.color = dark ? '#f3f3f3' : '#222';
+        e.style.borderColor = dark ? '#00c6fb' : '#00c6fb';
+      });
+      document.querySelectorAll('.card-content h3').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
+      document.querySelectorAll('.card-meta').forEach(e => e.style.color = dark ? '#b6c2d1' : '#6c757d');
+      document.querySelectorAll('.card-excerpt').forEach(e => e.style.color = dark ? '#f3f3f3' : '#333');
+      document.querySelectorAll('.read-more-link').forEach(e => e.style.color = dark ? '#00c6fb' : '#00c6fb');
+      document.querySelectorAll('.skills-grid .skill-item').forEach(e => {
+        e.style.background = dark ? 'linear-gradient(90deg, #23272f 0%, #1a1d23 100%)' : 'linear-gradient(90deg, #e3f0ff 0%, #c2e9fb 100%)';
+        e.style.color = dark ? '#00c6fb' : '#007acc';
+      });
+      document.querySelector('.action-button').style.background = dark ? 'linear-gradient(90deg,#005f99,#00b6e6)' : 'linear-gradient(90deg,#007acc,#00c6fb)';
+      document.querySelector('.action-button').style.color = dark ? '#fff' : '#fff';
+      modeToggle.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      modeToggle.style.background = dark ? '#23272f' : '#eee';
+      modeToggle.style.color = dark ? '#f3f3f3' : '#222';
+    }
+    modeToggle.addEventListener('click', () => setMode(!darkMode));
+    // Set initial mode based on system preference
+    setMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
     // Animated background for hero section
     const canvas = document.getElementById('animated-bg');
     if (canvas) {
