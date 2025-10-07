@@ -310,6 +310,9 @@
       document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
       document.querySelectorAll('.nav-link.active').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
       document.querySelectorAll('.section-title').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
+      document.querySelectorAll('.hero').forEach(e => e.style.background = dark ? '#23272f' : 'linear-gradient(120deg, #e3f0ff 0%, #f8f9fa 100%)');
+      document.querySelectorAll('.hero-title').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
+      document.querySelectorAll('.hero-subtitle').forEach(e => e.style.color = dark ? '#b6c2d1' : '#444');
       document.querySelectorAll('.project-card').forEach(e => {
         e.style.background = dark ? '#23272f' : '#fff';
         e.style.color = dark ? '#e2e6ed' : '#222';
@@ -441,6 +444,18 @@
         menuToggle.children[2].style.transform = '';
       }
     });
+    // Ensure dropdown always appears on mobile
+    function showMenuOnMobile() {
+      if (window.innerWidth <= 700) {
+        menuToggle.style.display = 'block';
+      } else {
+        menuToggle.style.display = 'none';
+        navLinksContainer.classList.remove('open');
+        menuToggle.classList.remove('active');
+      }
+    }
+    window.addEventListener('resize', showMenuOnMobile);
+    showMenuOnMobile();
     // Highlight active nav link on scroll
     const sections = ['hero','projects','skills'];
     const navLinks = document.querySelectorAll('.nav-link');

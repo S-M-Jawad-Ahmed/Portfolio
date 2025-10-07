@@ -188,14 +188,6 @@
       document.querySelectorAll('.project-featured-image').forEach(e => e.style.boxShadow = dark ? '0 4px 18px rgba(0,0,0,0.30)' : '0 4px 18px rgba(0,0,0,0.10)');
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
     }
-    modeToggle.addEventListener('click', () => setMode(!darkMode));
-    // Set initial mode based on localStorage or system preference
-    const savedMode = localStorage.getItem('darkMode');
-    if (savedMode !== null) {
-      setMode(savedMode === '1', false);
-    } else {
-      setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
-    }
     // Hamburger menu for mobile nav
     const menuToggle = document.getElementById('menu-toggle');
     const navLinksContainer = document.getElementById('nav-links');
@@ -212,6 +204,25 @@
         menuToggle.children[2].style.transform = '';
       }
     });
+    // Ensure dropdown always appears on mobile
+    function showMenuOnMobile() {
+      if (window.innerWidth <= 700) {
+        menuToggle.style.display = 'block';
+      } else {
+        menuToggle.style.display = 'none';
+        navLinksContainer.classList.remove('open');
+        menuToggle.classList.remove('active');
+      }
+    }
+    window.addEventListener('resize', showMenuOnMobile);
+    showMenuOnMobile();
+    // Set initial mode based on localStorage or system preference
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode !== null) {
+      setMode(savedMode === '1', false);
+    } else {
+      setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
+    }
   </script>
 </body>
 </html>
