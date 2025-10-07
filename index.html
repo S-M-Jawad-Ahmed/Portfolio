@@ -7,21 +7,48 @@
   <link rel="stylesheet" href="styles.773fc3ddad0cc4eae39b.css">
   <style>
     html { scroll-behavior: smooth; }
-    .nav-link { cursor:pointer; }
-    .nav-link.active { color: var(--primary-color); font-weight: bold; }
-    .action-button, .read-more-link { cursor:pointer; }
+    body { background: linear-gradient(120deg, #f8f9fa 0%, #e3f0ff 100%); min-height: 100vh; }
+    header { background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.07); position: sticky; top: 0; z-index: 1000; }
+    nav { display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 18px 24px; }
+    .nav-title { font-size: 2em; font-weight: 700; color: #007acc; letter-spacing: 1px; text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-link { color: #333; font-weight: 500; text-decoration: none; position: relative; transition: color 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #007acc; }
+    .nav-link.active::after { content: ''; display: block; height: 2px; background: #007acc; width: 100%; position: absolute; left: 0; bottom: -4px; border-radius: 2px; }
+    .hero { text-align: center; padding: 80px 20px 60px 20px; background: linear-gradient(120deg, #e3f0ff 0%, #f8f9fa 100%); }
+    .hero-title { font-size: 2.8em; font-weight: 800; color: #222; margin-bottom: 18px; }
+    .hero-subtitle { font-size: 1.3em; font-weight: 400; color: #444; margin-bottom: 32px; }
+    .action-button { background: #007acc; color: #fff; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-size: 1.1em; box-shadow: 0 2px 8px rgba(0,0,0,0.07); transition: background 0.2s, transform 0.1s; display: inline-block; }
+    .action-button:hover { background: #005f99; transform: translateY(-2px); }
+    .section-title { text-align: center; font-size: 2em; color: #007acc; margin-bottom: 40px; margin-top: 0; }
+    .project-list { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); margin-bottom: 40px; }
+    .project-card { background: #fff; border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.09); overflow: hidden; transition: box-shadow 0.3s, transform 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+    .project-card:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.16); transform: translateY(-6px) scale(1.03); }
+    .card-image-wrapper { height: 180px; overflow: hidden; }
+    .card-image { width: 100%; height: 100%; object-fit: cover; }
+    .card-content { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-content h3 { color: #007acc; margin-top: 0; margin-bottom: 10px; font-size: 1.25em; }
+    .card-meta { color: #6c757d; font-size: 0.95em; margin-bottom: 10px; }
+    .card-excerpt { flex-grow: 1; color: #333; margin-bottom: 12px; }
+    .read-more-link { color: #007acc; font-weight: 700; margin-top: 10px; text-decoration: underline; cursor: pointer; align-self: flex-start; }
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-bottom: 40px; }
+    .skill-item { background: linear-gradient(90deg, #e3f0ff 0%, #c2e9fb 100%); border-radius: 30px; color: #007acc; font-size: 1em; font-weight: 600; padding: 12px 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); transition: background 0.2s, transform 0.1s; animation: skillPop 0.7s cubic-bezier(.68,-0.55,.27,1.55) both; }
+    .skill-item:hover { background: #b6e0fe; transform: scale(1.08); }
+    @keyframes skillPop { 0% { transform: scale(0.7); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    footer { border-top: 1px solid #dee2e6; color: #6c757d; font-size: 0.95em; margin-top: 60px; padding: 24px; text-align: center; background: #fff; }
     @media (max-width: 700px) {
-      .main-content { padding: 10px; }
       nav { flex-direction: column; gap: 10px; }
+      .main-content { padding: 10px; }
       .project-list { grid-template-columns: 1fr; }
+      .hero { padding: 40px 10px 30px 10px; }
     }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <a href="#hero" class="nav-title nav-link">S.M. Jawad Ahmed | Data Analyst</a>
-      <div>
+      <a href="#hero" class="nav-title nav-link">S.M. Jawad Ahmed</a>
+      <div class="nav-links">
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="mailto:SheikhMuhammadJawadAhmed001@gmail.com" class="nav-link">Contact</a>
@@ -30,42 +57,21 @@
     </nav>
   </header>
   <main class="main-content">
-    <section id="hero" style="text-align:center;padding:60px 20px">
-      <h1 style="font-size:2.5em;margin-bottom:10px">Hi, I'm <span style="color:#007acc">Sheikh Muhammad Jawad Ahmed</span> <span role="img" aria-label="chart">📊</span></h1>
-      <p style="font-size:1.4em;font-weight:300;max-width:900px;margin:0 auto 30px">Data Analyst specializing in transforming raw data into actionable insights and robust reporting solutions using <b>SQL, R, and Tableau</b>.</p>
+    <section id="hero" class="hero">
+      <h1 class="hero-title">Hi, I'm <span style="color:#007acc">Sheikh Muhammad Jawad Ahmed</span> <span role="img" aria-label="chart">📊</span></h1>
+      <p class="hero-subtitle">Data Analyst specializing in transforming raw data into actionable insights and robust reporting solutions using <b>SQL, R, and Tableau</b>.</p>
       <a href="#projects" class="action-button">Explore My Work →</a>
     </section>
-    <hr/>
-    <section id="projects" style="margin-top:50px">
-      <h2 style="text-align:center;margin-bottom:40px">Featured Data Analysis Projects</h2>
-      <div class="project-list">
-        <a class="project-card" href="projects/cyclistic-case-study/index.html">
-          <div class="card-image-wrapper">
-            <img class="card-image" src="static/bb462c9d162995f54086c46bba01ad65/002ea/cyclistic-case-study.png" alt="Cyclistic Case Study" />
-          </div>
-          <div class="card-content">
-            <h3>Cyclistic Case Study – Member vs Casual Riders Analysis</h3>
-            <p class="card-meta">Sep 2025 | Stack: SQL (BigQuery), R (tidyverse, ggplot2), Tableau, Python</p>
-            <p class="card-excerpt">Analyzed 5.64 million Cyclistic trips to identify differences between member and casual riders, using advanced analytics and visualization tools.</p>
-            <span class="read-more-link" onclick="window.location.href='projects/cyclistic-case-study/index.html'">View Details →</span>
-          </div>
-        </a>
-        <!-- Add more project cards here -->
+    <section id="projects">
+      <h2 class="section-title">Featured Data Analysis Projects</h2>
+      <div class="project-list" id="project-list">
+        <!-- Dynamic Project Cards -->
       </div>
     </section>
-    <hr/>
-    <section id="skills" style="margin-top:80px;padding:20px">
-      <h2 style="text-align:center;margin-bottom:30px">Core Analytical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-item">Python, R, SQL</div>
-        <div class="skill-item">Tableau, Power BI, Matplotlib, Seaborn</div>
-        <div class="skill-item">PostgreSQL, BigQuery</div>
-        <div class="skill-item">Data Wrangling &amp; Normalization</div>
-        <div class="skill-item">Feature Engineering</div>
-        <div class="skill-item">Data Validation &amp; Quality Checks</div>
-        <div class="skill-item">Correlation &amp; Causation Analysis</div>
-        <div class="skill-item">Anomaly Detection</div>
-        <div class="skill-item">Excel</div>
+    <section id="skills">
+      <h2 class="section-title">Core Analytical Skills</h2>
+      <div class="skills-grid" id="skills-grid">
+        <!-- Dynamic Skills -->
       </div>
     </section>
   </main>
@@ -73,6 +79,56 @@
     <p>© 2025 Sheikh Muhammad Jawad Ahmed | Built with Gatsby</p>
   </footer>
   <script>
+    // Dynamic Projects Data
+    const projects = [
+      {
+        title: "Cyclistic Case Study – Member vs Casual Riders Analysis",
+        image: "static/bb462c9d162995f54086c46bba01ad65/002ea/cyclistic-case-study.png",
+        meta: "Sep 2025 | Stack: SQL (BigQuery), R (tidyverse, ggplot2), Tableau, Python",
+        excerpt: "Analyzed 5.64 million Cyclistic trips to identify differences between member and casual riders, using advanced analytics and visualization tools.",
+        link: "projects/cyclistic-case-study/index.html"
+      },
+      // Add more projects here as needed
+    ];
+    // Render Projects
+    const projectList = document.getElementById('project-list');
+    projects.forEach(project => {
+      const card = document.createElement('a');
+      card.className = 'project-card';
+      card.href = project.link;
+      card.innerHTML = `
+        <div class="card-image-wrapper">
+          <img class="card-image" src="${project.image}" alt="${project.title}" />
+        </div>
+        <div class="card-content">
+          <h3>${project.title}</h3>
+          <p class="card-meta">${project.meta}</p>
+          <p class="card-excerpt">${project.excerpt}</p>
+          <span class="read-more-link">View Details →</span>
+        </div>
+      `;
+      projectList.appendChild(card);
+    });
+    // Dynamic Skills Data
+    const skills = [
+      "Python, R, SQL",
+      "Tableau, Power BI, Matplotlib, Seaborn",
+      "PostgreSQL, BigQuery",
+      "Data Wrangling & Normalization",
+      "Feature Engineering",
+      "Data Validation & Quality Checks",
+      "Correlation & Causation Analysis",
+      "Anomaly Detection",
+      "Excel"
+    ];
+    // Render Skills
+    const skillsGrid = document.getElementById('skills-grid');
+    skills.forEach(skill => {
+      const item = document.createElement('div');
+      item.className = 'skill-item';
+      item.textContent = skill;
+      skillsGrid.appendChild(item);
+    });
     // Highlight active nav link on scroll
     const sections = ['hero','projects','skills'];
     const navLinks = document.querySelectorAll('.nav-link');
@@ -90,6 +146,18 @@
           link.classList.add('active');
         }
       });
+    });
+    // Smooth scroll for nav links
+    navLinks.forEach(link => {
+      if (link.getAttribute('href').startsWith('#')) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.getElementById(link.getAttribute('href').substring(1));
+          if (target) {
+            window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
+          }
+        });
+      }
     });
   </script>
 </body>
