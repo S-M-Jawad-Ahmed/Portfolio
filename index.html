@@ -250,10 +250,10 @@
       .nav-title { font-size: 1.2em; margin-bottom: 0; }
       #mode-toggle { position: absolute; right: 16px; top: 16px; margin: 0; width: auto; z-index: 1200; }
       #menu-toggle { display: block; z-index: 1201; }
-      .nav-links { display: none; position: absolute; left: 0; top: 56px; background: #fff; box-shadow: 0 8px 32px rgba(0,0,0,0.09); border-radius: 0 0 18px 18px; width: 100vw; flex-direction: column; gap: 0; z-index: 1200; animation: slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
+      .nav-links { display: none; position: absolute; left: 0; top: 56px; background: #23272f; box-shadow: 0 8px 32px rgba(0,0,0,0.35); border-radius: 0 0 18px 18px; width: 100vw; flex-direction: column; gap: 0; z-index: 1200; animation: slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
       .nav-links.open { display: flex; }
       .nav-link, .nav-title { font-size: 1em; padding: 18px 24px; width: 100%; text-align: left; }
-      .nav-link { border-bottom: 1px solid #eee; }
+      .nav-link { border-bottom: 1px solid #333; }
       @keyframes slideDown { 0% { transform: translateY(-40px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
     }
   </style>
@@ -301,7 +301,7 @@
     let darkMode = false;
     function setMode(dark, persist=true) {
       darkMode = dark;
-      document.body.style.background = dark ? 'linear-gradient(120deg, #181c24 0%, #23272f 100%)' : 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)';
+      document.body.style.background = dark ? '#181c24' : 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)';
       document.body.style.color = dark ? '#e2e6ed' : '#222';
       document.querySelector('header').style.background = dark ? 'rgba(24,28,36,0.97)' : 'rgba(255,255,255,0.95)';
       document.querySelector('footer').style.background = dark ? '#181c24' : '#fff';
@@ -313,7 +313,8 @@
       document.querySelectorAll('.project-card').forEach(e => {
         e.style.background = dark ? '#23272f' : '#fff';
         e.style.color = dark ? '#e2e6ed' : '#222';
-        e.style.borderColor = dark ? '#00c6fb' : '#00c6fb';
+        e.style.boxShadow = dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 24px rgba(0,0,0,0.10)';
+        e.style.borderColor = dark ? '#23272f' : '#00c6fb';
       });
       document.querySelectorAll('.card-content h3').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
       document.querySelectorAll('.card-meta').forEach(e => e.style.color = dark ? '#b6c2d1' : '#6c757d');

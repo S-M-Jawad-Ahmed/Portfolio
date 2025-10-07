@@ -17,15 +17,21 @@
     .nav-link.active::after { content:''; display:block; height:3px; background:linear-gradient(90deg,#007acc,#00c6fb); width:100%; position:absolute; left:0; bottom:-6px; border-radius:2px; animation:underlineGrow 0.4s; }
     @keyframes underlineGrow { from{width:0;} to{width:100%;} }
     .about-section { max-width:700px; margin:60px auto 0 auto; background:#fff; border-radius:18px; box-shadow:0 8px 32px rgba(0,0,0,0.09); padding:38px 24px; text-align:center; }
+    .about-section.dark { background:#23272f; box-shadow:0 8px 32px rgba(0,0,0,0.35); color:#e2e6ed; }
     .about-title { font-size:2em; color:#007acc; font-weight:800; margin-bottom:18px; }
     .about-text { font-size:1.18em; color:#333; line-height:1.7; font-weight:400; }
     .back-link { background:#007acc; border-radius:6px; color:#fff!important; display:inline-block; font-weight:700; padding:10px 24px; text-decoration:none; transition:background 0.2s; margin-top:32px; }
     .back-link:hover { background:#005f99; }
     @media (max-width:700px) {
-      nav { flex-direction:column; gap:0; padding:8px 4px; align-items:flex-start; }
-      .nav-title { font-size:1.2em; margin-bottom:6px; }
-      .nav-links { flex-direction:column; gap:0; width:100%; }
-      .nav-link, .nav-title { font-size:1em; padding:8px 0; width:100%; text-align:left; }
+      nav { flex-direction:row; align-items:center; padding:8px 4px; position:relative; }
+      .nav-title { font-size:1.2em; margin-bottom:0; }
+      #mode-toggle { position:absolute; right:16px; top:16px; margin:0; width:auto; z-index:1200; }
+      #menu-toggle { display:block; z-index:1201; }
+      .nav-links { display:none; position:absolute; left:0; top:56px; background:#fff; box-shadow:0 8px 32px rgba(0,0,0,0.09); border-radius:0 0 18px 18px; width:100vw; flex-direction:column; gap:0; z-index:1200; animation:slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
+      .nav-links.open { display:flex; }
+      .nav-link, .nav-title { font-size:1em; padding:18px 24px; width:100%; text-align:left; }
+      .nav-link { border-bottom:1px solid #eee; }
+      @keyframes slideDown { 0% { transform:translateY(-40px); opacity:0; } 100% { transform:translateY(0); opacity:1; } }
     }
   </style>
 </head>
@@ -33,13 +39,18 @@
   <header>
     <nav>
       <a href="index.html" class="nav-title nav-link">Home</a>
-      <div class="nav-links">
+      <div class="nav-links" id="nav-links">
         <a href="about.html" class="nav-link active">About</a>
         <a href="index.html#projects" class="nav-link">Projects</a>
         <a href="index.html#skills" class="nav-link">Skills</a>
         <a href="mailto:SheikhMuhammadJawadAhmed001@gmail.com" class="nav-link">Contact</a>
-        <button id="mode-toggle" aria-label="Toggle dark/light mode" style="margin-left:24px; background:#eee; border:none; border-radius:20px; padding:8px 18px; font-weight:700; cursor:pointer; color:#222; font-size:1em; transition:background 0.2s;">🌙 Dark Mode</button>
       </div>
+      <button id="mode-toggle" aria-label="Toggle dark/light mode" style="margin-left:24px; background:#eee; border:none; border-radius:20px; padding:8px 18px; font-weight:700; cursor:pointer; color:#222; font-size:1em; transition:background 0.2s;">🌙 Dark Mode</button>
+      <button id="menu-toggle" aria-label="Open navigation" style="display:none;position:absolute;left:16px;top:16px;background:none;border:none;z-index:1100;cursor:pointer;">
+        <span style="display:block;width:28px;height:4px;background:#007acc;margin:6px 0;border-radius:2px;transition:all 0.3s;"></span>
+        <span style="display:block;width:28px;height:4px;background:#007acc;margin:6px 0;border-radius:2px;transition:all 0.3s;"></span>
+        <span style="display:block;width:28px;height:4px;background:#007acc;margin:6px 0;border-radius:2px;transition:all 0.3s;"></span>
+      </button>
     </nav>
   </header>
   <main>
@@ -63,7 +74,7 @@
     let darkMode = false;
     function setMode(dark, persist=true) {
       darkMode = dark;
-      document.body.style.background = dark ? 'linear-gradient(120deg, #181c24 0%, #23272f 100%)' : 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)';
+      document.body.style.background = dark ? '#181c24' : 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)';
       document.body.style.color = dark ? '#e2e6ed' : '#222';
       document.querySelector('header').style.background = dark ? 'rgba(24,28,36,0.97)' : 'rgba(255,255,255,0.95)';
       document.querySelector('footer').style.background = dark ? '#181c24' : '#fff';
@@ -73,8 +84,11 @@
       document.querySelectorAll('.nav-link.active').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
       document.querySelectorAll('.about-title').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
       document.querySelectorAll('.about-section').forEach(e => {
-        e.style.background = dark ? '#23272f' : '#fff';
-        e.style.color = dark ? '#e2e6ed' : '#333';
+        if (dark) {
+          e.classList.add('dark');
+        } else {
+          e.classList.remove('dark');
+        }
       });
       document.querySelectorAll('.about-text').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
       document.querySelectorAll('.back-link').forEach(e => e.style.background = dark ? '#005f99' : '#007acc');
@@ -92,6 +106,22 @@
     } else {
       setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
     }
+    // Hamburger menu for mobile nav
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinksContainer = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', function() {
+      navLinksContainer.classList.toggle('open');
+      menuToggle.classList.toggle('active');
+      if (menuToggle.classList.contains('active')) {
+        menuToggle.children[0].style.transform = 'rotate(45deg) translateY(10px)';
+        menuToggle.children[1].style.opacity = '0';
+        menuToggle.children[2].style.transform = 'rotate(-45deg) translateY(-10px)';
+      } else {
+        menuToggle.children[0].style.transform = '';
+        menuToggle.children[1].style.opacity = '';
+        menuToggle.children[2].style.transform = '';
+      }
+    });
   </script>
 </body>
 </html>
