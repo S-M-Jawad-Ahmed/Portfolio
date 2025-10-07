@@ -38,6 +38,7 @@
         <a href="index.html#projects" class="nav-link">Projects</a>
         <a href="index.html#skills" class="nav-link">Skills</a>
         <a href="mailto:SheikhMuhammadJawadAhmed001@gmail.com" class="nav-link">Contact</a>
+        <button id="mode-toggle" aria-label="Toggle dark/light mode" style="margin-left:24px; background:#eee; border:none; border-radius:20px; padding:8px 18px; font-weight:700; cursor:pointer; color:#222; font-size:1em; transition:background 0.2s;">🌙 Dark Mode</button>
       </div>
     </nav>
   </header>
@@ -56,5 +57,41 @@
   <footer>
     <p>© 2025 Sheikh Muhammad Jawad Ahmed</p>
   </footer>
+  <script>
+    // Dark/Light mode toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    let darkMode = false;
+    function setMode(dark, persist=true) {
+      darkMode = dark;
+      document.body.style.background = dark ? 'linear-gradient(120deg, #181c24 0%, #23272f 100%)' : 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)';
+      document.body.style.color = dark ? '#e2e6ed' : '#222';
+      document.querySelector('header').style.background = dark ? 'rgba(24,28,36,0.97)' : 'rgba(255,255,255,0.95)';
+      document.querySelector('footer').style.background = dark ? '#181c24' : '#fff';
+      document.querySelector('footer').style.color = dark ? '#b6c2d1' : '#6c757d';
+      document.querySelectorAll('.nav-title').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
+      document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
+      document.querySelectorAll('.nav-link.active').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
+      document.querySelectorAll('.about-title').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
+      document.querySelectorAll('.about-section').forEach(e => {
+        e.style.background = dark ? '#23272f' : '#fff';
+        e.style.color = dark ? '#e2e6ed' : '#333';
+      });
+      document.querySelectorAll('.about-text').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
+      document.querySelectorAll('.back-link').forEach(e => e.style.background = dark ? '#005f99' : '#007acc');
+      document.querySelectorAll('.back-link').forEach(e => e.style.color = dark ? '#fff' : '#fff');
+      modeToggle.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      modeToggle.style.background = dark ? '#23272f' : '#eee';
+      modeToggle.style.color = dark ? '#e2e6ed' : '#222';
+      if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
+    }
+    modeToggle.addEventListener('click', () => setMode(!darkMode));
+    // Set initial mode based on localStorage or system preference
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode !== null) {
+      setMode(savedMode === '1', false);
+    } else {
+      setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
+    }
+  </script>
 </body>
 </html>
