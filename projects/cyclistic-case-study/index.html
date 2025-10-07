@@ -6,6 +6,24 @@
   <title>Cyclistic Case Study – Member vs Casual Riders Analysis</title>
   <link rel="stylesheet" href="../../styles.773fc3ddad0cc4eae39b.css">
   <style>
+    /* Table link styles */
+    .table-link {
+      color: #007acc;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: color 0.2s, background 0.2s;
+    }
+    .table-link:hover {
+      color: #0056b3;
+      background: rgba(0,198,251,0.08);
+    }
+    body.dark-mode .table-link {
+      color: #00c6fb;
+    }
+    body.dark-mode .table-link:hover {
+      color: #ffd700;
+      background: rgba(0,198,251,0.18);
+    }
     html { scroll-behavior: smooth; }
     body { margin: 0; font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%); min-height: 100vh; color: #222; }
     header { background: rgba(255,255,255,0.95); box-shadow: 0 4px 16px rgba(0,0,0,0.07); position: sticky; top: 0; z-index: 1000; animation: fadeInDown 1s; }
@@ -141,10 +159,10 @@
           <tr><th>Deliverable</th><th>Description</th><th>Link</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Original Data Source</strong></td><td>Official Divvy trip data (raw).</td><td><a href="https://divvy-tripdata.s3.amazonaws.com/index.html" target="_blank" style="color:#007acc;text-decoration:underline;">View Source</a></td></tr>
+          <tr><td><strong>Original Data Source</strong></td><td>Official Divvy trip data (raw).</td><td><a href="https://divvy-tripdata.s3.amazonaws.com/index.html" target="_blank" class="table-link">View Source</a></td></tr>
           <tr><td><strong>Processed Dataset</strong></td><td>Cleaned and feature-engineered dataset (coming soon).</td><td><span style="color:#aaa;">Not available yet</span></td></tr>
           <tr><td><strong>PDF Report</strong></td><td>Full analysis and recommendations (coming soon).</td><td><span style="color:#aaa;">Not available yet</span></td></tr>
-          <tr><td><strong>Tableau Dashboard</strong></td><td>Interactive dashboard (opens in new page).</td><td><a href="dashboard.html" style="color:#007acc;text-decoration:underline;">Open Dashboard</a></td></tr>
+          <tr><td><strong>Tableau Dashboard</strong></td><td>Interactive dashboard (opens in new page).</td><td><a href="dashboard.html" class="table-link">Open Dashboard</a></td></tr>
         </tbody>
       </table>
       <a href="../../index.html#projects" class="back-link">← Back to Projects</a>
@@ -185,17 +203,16 @@
       document.querySelectorAll('.project-featured-image').forEach(e => e.style.boxShadow = dark ? '0 4px 18px rgba(0,0,0,0.30)' : '0 4px 18px rgba(0,0,0,0.10)');
       document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? '#23272f' : '#fff');
       document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
-      document.querySelectorAll('a').forEach(e => {
-        if (e.closest('table')) {
-          e.onmouseover = function() {
-            this.style.color = dark ? '#00c6fb' : '#007acc';
-            this.style.background = dark ? 'rgba(0,198,251,0.12)' : 'rgba(0,198,251,0.08)';
-          };
-          e.onmouseout = function() {
-            this.style.color = dark ? '#e2e6ed' : '#007acc';
-            this.style.background = 'none';
-          };
-        }
+      document.querySelectorAll('.table-link').forEach(e => {
+        e.style.cursor = 'pointer';
+        e.onmouseover = function() {
+          this.style.color = dark ? '#ffd700' : '#0056b3';
+          this.style.background = dark ? 'rgba(0,198,251,0.18)' : 'rgba(0,198,251,0.08)';
+        };
+        e.onmouseout = function() {
+          this.style.color = dark ? '#00c6fb' : '#007acc';
+          this.style.background = 'none';
+        };
       });
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
     }
