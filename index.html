@@ -327,15 +327,15 @@
         e.style.background = dark ? '#23272f' : 'linear-gradient(90deg, #e3f0ff 0%, #c2e9fb 100%)';
         e.style.color = dark ? '#00c6fb' : '#007acc';
       });
+      document.querySelectorAll('.skills-grid').forEach(e => e.style.background = dark ? '#23272f' : '');
       document.querySelector('.action-button').style.background = dark ? 'linear-gradient(90deg,#005f99,#00b6e6)' : 'linear-gradient(90deg,#007acc,#00c6fb)';
       document.querySelector('.action-button').style.color = dark ? '#fff' : '#fff';
-      modeToggle.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
-      modeToggle.style.background = dark ? '#23272f' : '#eee';
-      modeToggle.style.color = dark ? '#e2e6ed' : '#222';
+      // Mobile dropdown text color
+      document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? '#23272f' : '#fff');
+      document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
     }
-    modeToggle.addEventListener('click', () => setMode(!darkMode));
-    // Set initial mode based on localStorage or system preference
+    // On page load, always apply saved dark mode
     const savedMode = localStorage.getItem('darkMode');
     if (savedMode !== null) {
       setMode(savedMode === '1', false);

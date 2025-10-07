@@ -186,7 +186,16 @@
       document.querySelectorAll('.back-link').forEach(e => e.style.background = dark ? '#005f99' : '#007acc');
       document.querySelectorAll('.back-link').forEach(e => e.style.color = dark ? '#fff' : '#fff');
       document.querySelectorAll('.project-featured-image').forEach(e => e.style.boxShadow = dark ? '0 4px 18px rgba(0,0,0,0.30)' : '0 4px 18px rgba(0,0,0,0.10)');
+      document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? '#23272f' : '#fff');
+      document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
+    }
+    // On page load, always apply saved dark mode
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode !== null) {
+      setMode(savedMode === '1', false);
+    } else {
+      setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
     }
     // Hamburger menu for mobile nav
     const menuToggle = document.getElementById('menu-toggle');
@@ -216,13 +225,6 @@
     }
     window.addEventListener('resize', showMenuOnMobile);
     showMenuOnMobile();
-    // Set initial mode based on localStorage or system preference
-    const savedMode = localStorage.getItem('darkMode');
-    if (savedMode !== null) {
-      setMode(savedMode === '1', false);
-    } else {
-      setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
-    }
   </script>
 </body>
 </html>
