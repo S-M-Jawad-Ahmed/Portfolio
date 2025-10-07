@@ -246,11 +246,11 @@
       animation: fadeInUp 1.2s;
     }
     @media (max-width: 700px) {
-      nav { flex-direction: column; gap: 10px; padding: 12px 8px; }
-      .nav-title { font-size: 1.3em; }
-      .nav-links { gap: 16px; flex-wrap: wrap; }
-      .nav-link, .nav-title { font-size: 1em; padding: 4px 0; }
-      #mode-toggle { margin-left: 0; margin-top: 8px; width: 100%; }
+      nav { flex-direction: column; gap: 0; padding: 8px 4px; align-items: flex-start; }
+      .nav-title { font-size: 1.2em; margin-bottom: 6px; }
+      .nav-links { flex-direction: column; gap: 0; width: 100%; }
+      .nav-link, .nav-title { font-size: 1em; padding: 8px 0; width: 100%; text-align: left; }
+      #mode-toggle { margin: 8px 0 0 0; width: 100%; align-self: flex-end; }
       .main-content { padding: 6px; }
       .hero { padding: 32px 6px 18px 6px; }
       .hero-title { font-size: 1.3em; }
@@ -275,7 +275,7 @@
     <nav>
       <a href="#hero" class="nav-title nav-link">Home</a>
       <div class="nav-links">
-        <a href="#about" class="nav-link">About</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="mailto:SheikhMuhammadJawadAhmed001@gmail.com" class="nav-link">Contact</a>
