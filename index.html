@@ -333,8 +333,12 @@
       document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
     }
+    function updateModeButton() {
+      modeToggle.textContent = darkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+    }
     modeToggle.addEventListener('click', function() {
       setMode(!darkMode);
+      updateModeButton();
     });
     // On page load, always apply saved dark mode
     document.addEventListener('DOMContentLoaded', function() {
@@ -344,6 +348,7 @@
       } else {
         setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
       }
+      updateModeButton();
     });
     // Animated background for hero section
     const canvas = document.getElementById('animated-bg');

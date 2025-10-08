@@ -90,7 +90,8 @@
       .nav-title { font-size: 1.2em; margin-bottom: 0; }
       #mode-toggle { position: absolute; right: 16px; top: 16px; margin: 0; width: auto; z-index: 1200; }
       #menu-toggle { display: block; z-index: 1201; }
-      .nav-links { display: none; position: absolute; left: 0; top: 56px; background: #23272f; box-shadow: 0 8px 32px rgba(0,0,0,0.35); border-radius: 0 0 18px 18px; width: 100vw; flex-direction: column; gap: 0; z-index: 1200; animation: slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
+  .nav-links { display: none; position: absolute; left: 0; top: 56px; background: #f8f9fa; box-shadow: 0 8px 32px rgba(0,0,0,0.35); border-radius: 0 0 18px 18px; width: 100vw; flex-direction: column; gap: 0; z-index: 1200; animation: slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
+  body.dark-mode .nav-links { background: #23272f; }
       .nav-links.open { display: flex; }
       .nav-link, .nav-title { font-size: 1em; padding: 18px 24px; width: 100%; text-align: left; }
       .nav-link { border-bottom: 1px solid #333; }
@@ -216,8 +217,12 @@
       });
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
     }
+    function updateModeButton() {
+      modeToggle.textContent = darkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+    }
     modeToggle.addEventListener('click', function() {
       setMode(!darkMode);
+      updateModeButton();
     });
     // On page load, always apply saved dark mode
     document.addEventListener('DOMContentLoaded', function() {
@@ -227,6 +232,7 @@
       } else {
         setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
       }
+      updateModeButton();
     });
     // Hamburger menu for mobile nav
     const menuToggle = document.getElementById('menu-toggle');
