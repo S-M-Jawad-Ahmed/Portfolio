@@ -6,6 +6,10 @@
   <title>Cyclistic Case Study – Member vs Casual Riders Analysis</title>
   <link rel="stylesheet" href="../../styles.773fc3ddad0cc4eae39b.css">
   <style>
+    /* Dark mode: description cell text color */
+    body.dark-mode td:nth-child(2) {
+      color: #0056b3;
+    }
     /* Table link styles */
     .table-link {
       color: #007acc;
@@ -26,7 +30,7 @@
     }
     /* Description cell animation */
     .desc-animate {
-      animation: fadeInDesc 0.4s cubic-bezier(.68,-0.55,.27,1.55) both;
+      animation: fadeInDesc 0.8s cubic-bezier(.68,-0.55,.27,1.55) both;
     }
     @keyframes fadeInDesc {
       0% { opacity: 0; transform: translateY(10px); }
