@@ -21,8 +21,16 @@
       color: #00c6fb;
     }
     body.dark-mode .table-link:hover {
-      color: #ffd700;
+      color: #0056b3;
       background: rgba(0,198,251,0.18);
+    }
+    /* Description cell animation */
+    .desc-animate {
+      animation: fadeInDesc 0.4s cubic-bezier(.68,-0.55,.27,1.55) both;
+    }
+    @keyframes fadeInDesc {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
     html { scroll-behavior: smooth; }
     body { margin: 0; font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%); min-height: 100vh; color: #222; }
@@ -207,12 +215,24 @@
       document.querySelectorAll('.table-link').forEach(e => {
         e.style.cursor = 'pointer';
         e.onmouseover = function() {
-          this.style.color = dark ? '#ffd700' : '#0056b3';
+          this.style.color = dark ? '#0056b3' : '#0056b3';
           this.style.background = dark ? 'rgba(0,198,251,0.18)' : 'rgba(0,198,251,0.08)';
+          // Animate description cell
+          const td = this.closest('td');
+          const tr = td && td.parentElement;
+          if (tr && tr.children[1]) {
+            tr.children[1].classList.add('desc-animate');
+          }
         };
         e.onmouseout = function() {
           this.style.color = dark ? '#00c6fb' : '#007acc';
           this.style.background = 'none';
+          // Remove animation from description cell
+          const td = this.closest('td');
+          const tr = td && td.parentElement;
+          if (tr && tr.children[1]) {
+            tr.children[1].classList.remove('desc-animate');
+          }
         };
       });
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
