@@ -1,11 +1,3 @@
----
-title: "Cyclistic Case Study – Member vs Casual Riders Analysis"
-date: "2025-09-01"
-stack: ["SQL (BigQuery)", "R (tidyverse, ggplot2)", "Tableau", "Python"]
-slug: "cyclistic-case-study"
-featuredImage: "../static/images/cyclistic-case-study.jpg" 
----
-
 ## Executive Summary
 [cite_start]I analyzed **5.64 million Cyclistic trips** from September 2024 to August 2025 to identify differences in usage between annual members and casual riders[cite: 1, 2]. [cite_start]The primary goal was to uncover patterns in ridership behavior to provide actionable recommendations for **increasing annual memberships**[cite: 3, 4].
 
@@ -43,7 +35,8 @@ featuredImage: "../static/images/cyclistic-case-study.jpg"
 
 | Deliverable | Description | Link Placeholder |
 | :--- | :--- | :--- |
-| **PDF Report** | The complete 10-page analysis, findings, and recommendations. | [Link to PDF Report] |
-| **Tableau Dashboard** | Interactive dashboard for stakeholder review. | [Link to Embedded Tableau Dashboard] |
-| **Processed Dataset** | [cite_start]The cleaned and feature-engineered Parquet/CSV dataset used for analysis[cite: 5]. | [Link to Processed Dataset Download] |
-| **Original Dataset** | [cite_start]Link to the official raw data source (Divvy portal)[cite: 6]. | [Link to Original Dataset] |
+| **PDF Report** | <span class="blue-text">The complete 10-page analysis, findings, and recommendations.</span> | [Link to PDF Report] |
+| **Tableau Dashboard** | <span class="blue-text">Interactive dashboard for stakeholder review.</span> | [Link to Embedded Tableau Dashboard] |
+| **Processed Dataset** | <span class="blue-text">[cite_start]The cleaned and feature-engineered Parquet/CSV dataset used for analysis[cite: 5].</span> | [Link to Processed Dataset Download] |
+| **Original Dataset** | <span class="blue-text">[cite_start]Link to the official raw data source (Divvy portal)[cite: 6].</span> | [Link to Original Dataset] |
+
