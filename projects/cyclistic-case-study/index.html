@@ -221,6 +221,9 @@
       <a href="../../index.html#projects" class="back-link">← Back to Projects</a>
     </div>
   </main>
+  <footer style="border-top: 1px solid #dee2e6; color: #6c757d; font-size: 1em; margin-top: 70px; padding: 28px; text-align: center; background: #fff;">
+    <p>© 2025 Sheikh Muhammad Jawad Ahmed</p>
+  </footer>
   <script>
     const modeToggle = document.getElementById('mode-toggle');
     let darkMode = false;
@@ -230,6 +233,9 @@
       document.body.style.background = dark ? '#181c24' : 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)';
       document.body.style.color = dark ? '#e2e6ed' : '#222';
       document.querySelector('header').style.background = dark ? 'rgba(24,28,36,0.97)' : 'rgba(255,255,255,0.95)';
+      document.querySelector('footer').style.background = dark ? '#181c24' : '#fff';
+      document.querySelector('footer').style.color = dark ? '#b6c2d1' : '#6c757d';
+      document.querySelector('footer').style.borderTopColor = dark ? '#333' : '#dee2e6';
       document.querySelectorAll('.nav-title').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
       document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
       document.querySelectorAll('.nav-link.active').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
