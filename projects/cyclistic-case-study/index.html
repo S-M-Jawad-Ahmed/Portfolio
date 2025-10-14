@@ -225,7 +225,7 @@
     </div>
   </main>
   <footer style="border-top: 1px solid #dee2e6; color: #6c757d; font-size: 1em; margin-top: 70px; padding: 28px; text-align: center; background: #fff;">
-    <p>© 2025 Sheikh Muhammad Jawad Ahmed</p>
+    <p>© <span id="year"></span> Sheikh Muhammad Jawad Ahmed</p>
   </footer>
   <script>
     const modeToggle = document.getElementById('mode-toggle');
@@ -327,6 +327,7 @@
     }
     window.addEventListener('resize', showMenuOnMobile);
     showMenuOnMobile();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
