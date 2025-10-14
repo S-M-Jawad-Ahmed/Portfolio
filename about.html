@@ -86,15 +86,18 @@
       transform: rotate(0deg) scale(1);
     }
     @media (max-width:700px) {
-      nav { flex-direction:row; align-items:center; padding:8px 4px; position:relative; }
-      .nav-title { font-size:1.2em; margin-bottom:0; }
-      .theme-toggle { position:absolute; right:16px; top:16px; margin:0; z-index:1200; }
+      nav { flex-direction:row; align-items:center; padding:12px 8px; position:relative; }
+      .nav-title { font-size:1.3em; margin-bottom:0; }
+      .theme-toggle { position:absolute; right:16px; top:12px; margin:0; z-index:1200; }
       #menu-toggle { display:block; z-index:1201; }
-      .nav-links { display:none; position:absolute; left:0; top:56px; background:#23272f; box-shadow:0 8px 32px rgba(0,0,0,0.35); border-radius:0 0 18px 18px; width:100vw; flex-direction:column; gap:0; z-index:1200; animation:slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
+      .nav-links { display:none; position:absolute; left:0; top:56px; background:rgba(255,255,255,0.98); box-shadow:0 8px 32px rgba(0,0,0,0.2); border-radius:0 0 18px 18px; width:100vw; flex-direction:column; gap:0; z-index:1200; animation:slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
       .nav-links.open { display:flex; }
-      .nav-link, .nav-title { font-size:1em; padding:18px 24px; width:100%; text-align:left; }
-      .nav-link { border-bottom:1px solid #333; }
+      .nav-link, .nav-title { font-size:1.05em; padding:20px 24px; width:100%; text-align:left; }
+      .nav-link { border-bottom:1px solid #e0e0e0; }
       @keyframes slideDown { 0% { transform:translateY(-40px); opacity:0; } 100% { transform:translateY(0); opacity:1; } }
+      .about-section { margin:30px 16px; padding:28px 18px; }
+      .about-title { font-size:1.8em; }
+      .about-text { font-size:1.05em; line-height:1.7; }
     }
   </style>
 </head>
@@ -136,11 +139,7 @@
       <a href="index.html" class="back-link">← Back to Home</a>
     </section>
   </main>
-  <footer>
-    <p>© 2025 Sheikh Muhammad Jawad Ahmed</p>
-  </footer>
   <script>
-    // Dark/Light mode toggle
     const modeToggle = document.getElementById('mode-toggle');
     let darkMode = false;
     function setMode(dark, persist=true) {
@@ -149,8 +148,6 @@
       document.body.style.background = dark ? '#181c24' : 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)';
       document.body.style.color = dark ? '#e2e6ed' : '#222';
       document.querySelector('header').style.background = dark ? 'rgba(24,28,36,0.97)' : 'rgba(255,255,255,0.95)';
-      document.querySelector('footer').style.background = dark ? '#181c24' : '#fff';
-      document.querySelector('footer').style.color = dark ? '#b6c2d1' : '#6c757d';
       document.querySelectorAll('.nav-title').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
       document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
       document.querySelectorAll('.nav-link.active').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
@@ -165,21 +162,22 @@
       document.querySelectorAll('.about-text').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
       document.querySelectorAll('.back-link').forEach(e => e.style.background = dark ? '#005f99' : '#007acc');
       document.querySelectorAll('.back-link').forEach(e => e.style.color = dark ? '#fff' : '#fff');
-      document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? '#23272f' : '#fff');
-      document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
+      document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? '#23272f' : 'rgba(255,255,255,0.98)');
+      document.querySelectorAll('.nav-link').forEach(e => {
+        e.style.color = dark ? '#e2e6ed' : '#222';
+        e.style.borderBottomColor = dark ? '#333' : '#e0e0e0';
+      });
       if (persist) localStorage.setItem('darkMode', dark ? '1' : '0');
     }
     modeToggle.addEventListener('change', function() {
       setMode(this.checked);
     });
-    // Set initial mode based on localStorage or system preference
     const savedMode = localStorage.getItem('darkMode');
     if (savedMode !== null) {
       setMode(savedMode === '1', false);
     } else {
       setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
     }
-    // Hamburger menu for mobile nav
     const menuToggle = document.getElementById('menu-toggle');
     const navLinksContainer = document.getElementById('nav-links');
     menuToggle.addEventListener('click', function() {
@@ -195,7 +193,6 @@
         menuToggle.children[2].style.transform = '';
       }
     });
-    // Ensure dropdown always appears on mobile
     function showMenuOnMobile() {
       if (window.innerWidth <= 700) {
         menuToggle.style.display = 'block';

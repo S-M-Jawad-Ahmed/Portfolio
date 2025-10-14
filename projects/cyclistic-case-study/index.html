@@ -6,11 +6,9 @@
   <title>Cyclistic Case Study – Member vs Casual Riders Analysis</title>
   <link rel="stylesheet" href="../../styles.773fc3ddad0cc4eae39b.css">
   <style>
-    /* Dark mode: description cell text color */
     body.dark-mode td:nth-child(2) {
       color: #0056b3;
     }
-    /* Table link styles */
     .table-link {
       color: #007acc;
       text-decoration: underline;
@@ -28,7 +26,6 @@
       color: #0056b3;
       background: rgba(0,198,251,0.18);
     }
-    /* Description cell animation */
     .desc-animate {
       animation: fadeInDesc 0.8s cubic-bezier(.68,-0.55,.27,1.55) both;
     }
@@ -96,8 +93,6 @@
     .back-link { background: #007acc; border-radius: 6px; color: #fff!important; display: inline-block; font-weight: 700; padding: 10px 24px; text-decoration: none; transition: background 0.2s; margin-top: 30px; }
     .back-link:hover { background: #005f99; }
     .tableauPlaceholder { margin: 32px 0; }
-    footer { border-top: 1px solid #dee2e6; color: #6c757d; font-size: 0.95em; margin-top: 60px; padding: 24px; text-align: center; background: #fff; }
-    /* Dark Mode Toggle Switch Styling */
     .theme-toggle {
       display: inline-block;
       cursor: pointer;
@@ -161,46 +156,20 @@
       transform: rotate(0deg) scale(1);
     }
     @media (max-width: 700px) {
-      nav { flex-direction: row; align-items: center; padding: 8px 4px; position: relative; }
-      .nav-title { font-size: 1.2em; margin-bottom: 0; }
-      .theme-toggle { position: absolute; right: 16px; top: 16px; margin: 0; z-index: 1200; }
+      nav { flex-direction: row; align-items: center; padding: 12px 8px; position: relative; }
+      .nav-title { font-size: 1.3em; margin-bottom: 0; }
+      .theme-toggle { position: absolute; right: 16px; top: 12px; margin: 0; z-index: 1200; }
       #menu-toggle { display: block; z-index: 1201; }
-  .nav-links { display: none; position: absolute; left: 0; top: 56px; background: #f8f9fa; box-shadow: 0 8px 32px rgba(0,0,0,0.35); border-radius: 0 0 18px 18px; width: 100vw; flex-direction: column; gap: 0; z-index: 1200; animation: slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
-  body.dark-mode .nav-links { background: #23272f; }
+      .nav-links { display: none; position: absolute; left: 0; top: 56px; background: rgba(255,255,255,0.98); box-shadow: 0 8px 32px rgba(0,0,0,0.2); border-radius: 0 0 18px 18px; width: 100vw; flex-direction: column; gap: 0; z-index: 1200; animation: slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
       .nav-links.open { display: flex; }
-      .nav-link, .nav-title { font-size: 1em; padding: 18px 24px; width: 100%; text-align: left; }
-      .nav-link { border-bottom: 1px solid #333; }
+      .nav-link, .nav-title { font-size: 1.05em; padding: 20px 24px; width: 100%; text-align: left; }
+      .nav-link { border-bottom: 1px solid #e0e0e0; }
       @keyframes slideDown { 0% { transform: translateY(-40px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
-    }
-    .main-content { max-width: 900px; margin: 0 auto; padding: 32px 12px 40px 12px; background: rgba(255,255,255,0.98); border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.09); margin-top: 40px; }
-    .project-title { font-size: 2.2em; font-weight: 800; color: #007acc; margin-bottom: 18px; text-align: center; letter-spacing: 1px; }
-    .project-featured-image { display: block; margin: 0 auto 28px auto; border-radius: 14px; box-shadow: 0 4px 18px rgba(0,0,0,0.10); max-width: 700px; width: 100%; height: auto; }
-    .project-meta { text-align: center; color: #555; font-size: 1.08em; margin-bottom: 24px; background: #e3f0ff; border-radius: 8px; padding: 10px 0; font-weight: 600; }
-    .project-content h2 { color: #007acc; border-bottom: 2px solid #eee; margin-top: 38px; padding-bottom: 6px; font-size: 1.3em; }
-    .project-content h3 { color: #005f99; margin-top: 24px; font-size: 1.1em; }
-    .project-content ul, .project-content ol { margin-bottom: 18px; }
-    .project-content li { margin-bottom: 8px; }
-    .project-content strong { color: #007acc; }
-    .project-content table { border-collapse: collapse; margin-top: 18px; width: 100%; background: #f8f9fa; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-    .project-content th, .project-content td { border: 1px solid #ddd; padding: 14px; text-align: left; }
-    .project-content th { background-color: #e3f0ff; color: #007acc; font-weight: 700; }
-
-    .recommendations { background: #e3f0ff; border-radius: 10px; padding: 18px 22px; margin: 28px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-    .recommendations h2 { margin-top: 0; }
-    .back-link { background: #007acc; border-radius: 6px; color: #fff!important; display: inline-block; font-weight: 700; padding: 10px 24px; text-decoration: none; transition: background 0.2s; margin-top: 30px; }
-    .back-link:hover { background: #005f99; }
-    .tableauPlaceholder { margin: 32px 0; }
-    footer { border-top: 1px solid #dee2e6; color: #6c757d; font-size: 0.95em; margin-top: 60px; padding: 24px; text-align: center; background: #fff; }
-    @media (max-width: 700px) {
-      nav { flex-direction: row; align-items: center; padding: 8px 4px; position: relative; }
-      .nav-title { font-size: 1.2em; margin-bottom: 0; }
-      #mode-toggle { position: absolute; right: 16px; top: 16px; margin: 0; width: auto; z-index: 1200; }
-      #menu-toggle { display: block; z-index: 1201; }
-      .nav-links { display: none; position: absolute; left: 0; top: 56px; background: #23272f; box-shadow: 0 8px 32px rgba(0,0,0,0.35); border-radius: 0 0 18px 18px; width: 100vw; flex-direction: column; gap: 0; z-index: 1200; animation: slideDown 0.4s cubic-bezier(.68,-0.55,.27,1.55) both; }
-      .nav-links.open { display: flex; }
-      .nav-link, .nav-title { font-size: 1em; padding: 18px 24px; width: 100%; text-align: left; }
-      .nav-link { border-bottom: 1px solid #333; }
-      @keyframes slideDown { 0% { transform: translateY(-40px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+      .main-content { margin: 20px 12px; padding: 24px 16px; }
+      .project-title { font-size: 1.8em; }
+      .project-meta { font-size: 0.95em; }
+      .project-content h2 { font-size: 1.4em; }
+      .project-content h3 { font-size: 1.15em; }
     }
   </style>
 </head>
@@ -252,11 +221,7 @@
       <a href="../../index.html#projects" class="back-link">← Back to Projects</a>
     </div>
   </main>
-  <footer>
-  <p>© 2025 Sheikh Muhammad Jawad Ahmed</p>
-  </footer>
   <script>
-    // Dark/Light mode toggle
     const modeToggle = document.getElementById('mode-toggle');
     let darkMode = false;
     function setMode(dark, persist=true) {
@@ -265,8 +230,6 @@
       document.body.style.background = dark ? '#181c24' : 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)';
       document.body.style.color = dark ? '#e2e6ed' : '#222';
       document.querySelector('header').style.background = dark ? 'rgba(24,28,36,0.97)' : 'rgba(255,255,255,0.95)';
-      document.querySelector('footer').style.background = dark ? '#181c24' : '#fff';
-      document.querySelector('footer').style.color = dark ? '#b6c2d1' : '#6c757d';
       document.querySelectorAll('.nav-title').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
       document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
       document.querySelectorAll('.nav-link.active').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
@@ -286,8 +249,11 @@
       document.querySelectorAll('.back-link').forEach(e => e.style.background = dark ? '#005f99' : '#007acc');
       document.querySelectorAll('.back-link').forEach(e => e.style.color = dark ? '#fff' : '#fff');
       document.querySelectorAll('.project-featured-image').forEach(e => e.style.boxShadow = dark ? '0 4px 18px rgba(0,0,0,0.30)' : '0 4px 18px rgba(0,0,0,0.10)');
-      document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? '#23272f' : '#fff');
-      document.querySelectorAll('.nav-link').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
+      document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? '#23272f' : 'rgba(255,255,255,0.98)');
+      document.querySelectorAll('.nav-link').forEach(e => {
+        e.style.color = dark ? '#e2e6ed' : '#222';
+        e.style.borderBottomColor = dark ? '#333' : '#e0e0e0';
+      });
       document.querySelectorAll('.table-link').forEach(e => {
         e.style.cursor = 'pointer';
         e.onmouseover = function() {
@@ -316,7 +282,6 @@
     modeToggle.addEventListener('change', function() {
       setMode(this.checked);
     });
-    // On page load, always apply saved dark mode
     document.addEventListener('DOMContentLoaded', function() {
       const savedMode = localStorage.getItem('darkMode');
       if (savedMode !== null) {
@@ -325,7 +290,6 @@
         setMode(window.matchMedia('(prefers-color-scheme: dark)').matches, true);
       }
     });
-    // Hamburger menu for mobile nav
     const menuToggle = document.getElementById('menu-toggle');
     const navLinksContainer = document.getElementById('nav-links');
     menuToggle.addEventListener('click', function() {
@@ -341,7 +305,6 @@
         menuToggle.children[2].style.transform = '';
       }
     });
-    // Ensure dropdown always appears on mobile
     function showMenuOnMobile() {
       if (window.innerWidth <= 700) {
         menuToggle.style.display = 'block';
