@@ -1,18 +1,18 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Data Analyst Portfolio - Static Site",
-  "main": "server.js",
+  "description": "Sheikh Muhammad Jawad Ahmed - Data Analyst Portfolio (Built with Gatsby and GitHub Pages)",
   "scripts": {
-    "start": "node server.js"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "gatsby serve"
   },
   "keywords": [
     "portfolio",
-    "gatsby"
+    "data analyst",
+    "gatsby",
+    "github pages"
   ],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.21.2"
-  }
+  "author": "Sheikh Muhammad Jawad Ahmed <SheikhMuhammadJawadAhmed001@gmail.com>",
+  "license": "MIT"
 }
