@@ -206,7 +206,7 @@ details[open] .code-block {
     
     <h2>SQL</h2>
  
-<details> data-viz="master-table">
+<details data-viz="master-table">
         <summary>Master Table</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -235,7 +235,7 @@ UNION ALL SELECT * FROM `your_project_id.divvy_dataset.202508_divvy_tripdata`;</
     </details>
 
 
-<details> data-viz="check-rows">
+<details data-viz="check-rows">
         <summary>Check Rows</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -248,7 +248,7 @@ FROM `your_project_id.divvy_dataset.all_trips_combined`;</code></pre>
     </details>
     
 
-<details> data-viz="standardize-timestamps">
+<details data-viz="standardize-timestamps">
         <summary>Standardize Timestamps</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -274,7 +274,7 @@ FROM `your_project_id.divvy_dataset.all_trips_combined`;</code></pre>
     </details>
 
 
-<details> data-viz="validate-data-integrity">
+<details data-viz="validate-data-integrity">
         <summary>Validate Data Integrity</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -289,7 +289,7 @@ FROM `your_project_id.divvy_dataset.all_trips_chicago_time`;</code></pre>
     </details>
 
 
-<details> data-viz="remove-columns">
+<details data-viz="remove-columns">
         <summary>Remove Columns</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -306,7 +306,7 @@ FROM `your_project_id.divvy_dataset.all_trips_chicago_time`;</code></pre>
     </details>
 
 
-<details> data-viz="feature-engineering">
+<details data-viz="feature-engineering">
         <summary>Feature Engineering</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -341,7 +341,7 @@ FROM `your_project_id.divvy_dataset.all_trips_optimized`;</code></pre>
     </details>
     
 
-<details> data-viz="outlier-check">
+<details data-viz="outlier-check">
         <summary>Outlier check</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -354,7 +354,7 @@ WHERE trip_duration_minutes < 0 OR trip_duration_minutes > 1440;</code></pre>
     </details>
     
 
-<details> data-viz="remove-outliers">
+<details data-viz="remove-outliers">
         <summary>Remove Outliers</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -369,7 +369,7 @@ WHERE trip_duration_minutes >= 0
     </details>
 
 
-<details> data-viz="rows-count-check">
+<details data-viz="rows-count-check">
         <summary>Final Validation: Rows Count Check</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -382,7 +382,7 @@ FROM `your_project_id.divvy_dataset.divvy_trips_cleaned`;</code></pre>
     </details>
 
 
-<details> data-viz="missing-values-check">
+<details data-viz="missing-values-check">
         <summary>Final Validation: Missing Values Check</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -399,7 +399,7 @@ FROM `your_project_id.divvy_dataset.divvy_trips_cleaned`;</code></pre>
     </details>
 
 
-<details> data-viz="figure-2">
+<details data-viz="figure-2">
         <summary>Figure 2</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -424,7 +424,7 @@ FROM rider_distribution;</code></pre>
     </details>
 
 
-<details> data-viz="figure-3">
+<details data-viz="figure-3">
         <summary>Figure 3</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -441,7 +441,7 @@ ORDER BY pct_trips_over_20mins;</code></pre>
     </details>
 
 
-<details> data-viz="figure-4">
+<details data-viz="figure-4">
         <summary>Figure 4</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -458,7 +458,7 @@ ORDER BY avg_duration;</code></pre>
     </details>
 
 
-<details> data-viz="figure-7">
+<details data-viz="figure-7">
         <summary>Figure 7</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -479,7 +479,7 @@ ORDER BY member_casual;</code></pre>
     </details>
 
 
-<details> data-viz="figure-9">
+<details data-viz="figure-9">
         <summary>Figure 9</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -501,7 +501,7 @@ ORDER BY member_casual, rideable_type;</code></pre>
    
      <h2>R Code</h2>
    
-<details> data-viz="data-load">
+<details data-viz="data-load">
         <summary>Libraries and data load</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -554,7 +554,7 @@ colSums(is.na(divvy_data))</code></pre>
     </details>
 
 
-<details> data-viz="figure-5">
+<details data-viz="figure-5">
         <summary>Figure 5</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -587,7 +587,7 @@ print(boxplot)</code></pre>
     </details>
 
 
-<details> data-viz="all-data">
+<details data-viz="all-data">
         <summary>Why removed trips <=0 or >120 min?</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -609,7 +609,7 @@ print(alldata)</code></pre>
     </details>
 
 
-<details> data-viz="figure-6">
+<details data-viz="figure-6">
         <summary>Figure 6</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -649,7 +649,7 @@ print(bar)</code></pre>
     </details>
 
 
-<details> data-viz="figure-8">
+<details data-viz="figure-8">
         <summary>Figure 8</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -683,7 +683,7 @@ print(heatmap)</code></pre>
     </details>
 
 
-<details> data-viz="figure-10">
+<details data-viz="figure-10">
         <summary>Figure 10</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
@@ -701,7 +701,7 @@ print(grouped_bar_chart)</code></pre>
     </details>
 
 
-<details> data-viz="figure-12">
+<details data-viz="figure-12">
         <summary>Figure 12</summary>
         <div class="code-block">
             <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
