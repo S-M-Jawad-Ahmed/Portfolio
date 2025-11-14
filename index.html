@@ -1,19 +1,26 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Data Analyst Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css" />
   <link rel="stylesheet" href="styles.773fc3ddad0cc4eae39b.css">
   <style>
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; 
+       overflow-x: hidden; 
+    }
+  
     body {
       margin: 0;
       font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
       background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
       min-height: 100vh;
       color: #222;
+      overflow-x: hidden;  
     }
+    
     header {
       background: rgba(255,255,255,0.95);
       box-shadow: 0 4px 16px rgba(0,0,0,0.07);
@@ -116,8 +123,19 @@
     }
     .action-button:hover {
       background: linear-gradient(90deg,#005f99,#00b6e6);
-      transform: translateY(-2px) scale(1.04);
+      transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 122, 204, 0.5);
     }
+    
+body.dark-mode .action-button:hover {
+  box-shadow: 0 10px 30px rgba(0, 198, 251, 0.6);
+}
+
+.action-button:active {
+  transform: translateY(-1px);
+}
+   
+    
     .animated-bg {
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -139,6 +157,7 @@
       gap: 36px;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       margin-bottom: 48px;
+      padding: 0 20px;
       animation: fadeInUp 1.2s;
     }
     .project-card {
@@ -154,11 +173,32 @@
       position: relative;
       animation: fadeInUp 1.5s;
     }
+    
     .project-card:hover {
-      box-shadow: 0 16px 40px rgba(0,0,0,0.18);
-      transform: translateY(-8px) scale(1.04);
-      border: 2px solid #00c6fb;
-    }
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+  transform: translateY(-8px);
+  border: 2px solid #00c6fb;
+}
+
+/* Dark Mode Project Cards */
+body.dark-mode .project-card {
+  background: #1e293b;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+body.dark-mode .project-card:hover {
+  border: 2px solid #00c6fb;
+  box-shadow: 0 16px 40px rgba(0, 198, 251, 0.3);
+}
+
+body.dark-mode .card-content h3 {
+  color: #00c6fb;
+}
+
+body.dark-mode .card-excerpt {
+  color: #cbd5e1;
+}
+    
     .card-image-wrapper {
       height: 190px;
       overflow: hidden;
@@ -297,6 +337,406 @@
       opacity: 1;
       transform: rotate(0deg) scale(1);
     }
+    
+    /* View Details Button*/
+.view-details-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #007acc, #00c6fb);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1em;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  margin-top: 10px;
+  align-self: center; 
+  width: fit-content;  
+}
+
+.view-details-btn:hover {
+  background: linear-gradient(90deg, #005f99, #00b6e6);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 122, 204, 0.5);
+}
+
+body.dark-mode .view-details-btn:hover {
+  box-shadow: 0 10px 30px rgba(0, 198, 251, 0.6);
+}
+
+.view-details-btn:active {
+  transform: translateY(-1px);
+}
+    
+    
+    
+    /*GLIDE CERTIFICATE SLIDER*/
+#achievements {
+  padding: 10px 10px;
+  background: transparent;
+  transition: background 0.3s ease;
+  overflow: visible;  /* ADD */
+}
+
+body.dark-mode #achievements {
+  background: transparent;
+  overflow: visible;  /* ADD */
+}
+
+.glide {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  perspective: 2000px;
+  overflow: visible;  /* ADD */
+}
+
+.glide__track {
+  overflow: visible !important;
+}
+
+.glide__slides {
+  display: flex;
+  align-items: center;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+  overflow: visible;  /* ADD */
+}
+
+.glide__slide {
+  opacity: 0.4;
+  transform: scale(0.85) rotateY(15deg);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  filter: blur(2px);
+}
+
+.glide__slide--active {
+  opacity: 1;
+  transform: scale(1) rotateY(0deg);
+  z-index: 10;
+  filter: blur(0);
+}
+
+.certificate-card {
+  background: #fff;
+  border: 3px solid transparent;
+  border-image: linear-gradient(135deg, #007acc, #00c6fb, #007acc) 1;
+  border-radius: 20px;
+  padding: 0;
+  margin: 40px 20px;
+  box-shadow: 0 20px 60px rgba(0, 122, 204, 0.3);
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+body.dark-mode .certificate-card {
+  background: #1e293b;
+  border-image: linear-gradient(135deg, #00c6fb, #007acc, #00c6fb) 1;
+  box-shadow: 0 20px 60px rgba(0, 198, 251, 0.4);
+}
+
+.glide__slide--active .certificate-card {
+  box-shadow: 0 30px 80px rgba(0, 122, 204, 0.5);
+  border-image: linear-gradient(135deg, #00c6fb, #007acc, #00c6fb) 1;
+}
+
+body.dark-mode .glide__slide--active .certificate-card {
+  box-shadow: 0 30px 80px rgba(0, 198, 251, 0.6);
+}
+
+.certificate-image-wrapper {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  max-height: 400px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e3f0ff 0%, #c2e9fb 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.dark-mode .certificate-image-wrapper {
+  background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+}
+
+.certificate-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.certificate-card:hover .certificate-image {
+  transform: scale(1.08);
+}
+
+.certificate-info {
+  padding: 30px;
+  background: linear-gradient(to bottom, #fff 0%, #f8fcff 100%);
+  display: flex;          
+  flex-direction: column;  
+  align-items: center;    
+  text-align: center;     
+}
+
+body.dark-mode .certificate-info {
+  background: linear-gradient(to bottom, #1e293b 0%, #0f172a 100%);
+}
+
+.certificate-name {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #007acc;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .certificate-name {
+  color: #00c6fb;
+}
+
+.certificate-description {
+  font-size: 1.00em;
+  color: #555;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .certificate-description {
+  color: #cbd5e1;
+}
+
+.view-certificate-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #007acc, #00c6fb);
+  color: #fff;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.05em;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  align-self: center;  
+  width: fit-content; 
+}
+
+.view-certificate-btn:hover {
+  background: linear-gradient(90deg, #005f99, #00b6e6);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 122, 204, 0.5);
+}
+
+body.dark-mode .view-certificate-btn:hover {
+  box-shadow: 0 10px 30px rgba(0, 198, 251, 0.6);
+}
+
+.view-certificate-btn:active {
+  transform: translateY(-1px);
+}
+
+
+/* Certificate Tags */
+.certificate-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;  
+  justify-content: center;
+  margin: 12px 0;  
+}
+
+.certificate-tag {
+  background: transparent;
+  border: 2px solid #007acc;
+  color: #007acc;
+  padding: 6px 16px; 
+  border-radius: 20px;  
+  font-size: 0.75em;  
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.certificate-tag:hover {
+  background: #007acc;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+body.dark-mode .certificate-tag {
+  border-color: #00c6fb;
+  color: #00c6fb;
+}
+
+body.dark-mode .certificate-tag:hover {
+  background: #00c6fb;
+  color: #0f172a;
+}
+
+
+/* Top Performer Badge */
+.top-performer-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
+  margin-left: 30px; 
+}
+
+.top-performer-badge:hover {
+  transform: scale(1.1);
+}
+
+.top-performer-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Tooltip for badge */
+.badge-tooltip {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: transparent;
+  color: #007ACC;
+  padding: 3px 1px;
+  border-radius: 0;
+  font-size: 0.7em;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  box-shadow: none;
+}
+
+body.dark-mode .badge-tooltip {
+  background: transparent;
+  color: #10C5F6;
+}
+
+.top-performer-badge:hover .badge-tooltip {
+  opacity: 1;
+}
+   
+
+#internships .card-content h3 {
+  padding-right: 50px;  
+}
+   
+
+/* Glide Navigation Arrows */
+.glide__arrows {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.glide__arrow {
+  pointer-events: all;
+  background: rgba(0, 122, 204, 0.9);
+  color: #fff;
+  border: none;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 122, 204, 0.4);
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+body.dark-mode .glide__arrow {
+  background: rgba(0, 198, 251, 0.9);
+  box-shadow: 0 6px 20px rgba(0, 198, 251, 0.5);
+}
+
+.glide__arrow:hover {
+  background: rgba(0, 198, 251, 1);
+  transform: scale(1.15);
+  box-shadow: 0 8px 30px rgba(0, 198, 251, 0.6);
+}
+
+.glide__arrow--left {
+  margin-left: -25px;
+}
+
+.glide__arrow--right {
+  margin-right: -25px;
+}
+
+.glide__arrow--disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+
+/* Section Title Dark Mode */
+body.dark-mode .section-title {
+  color: #00c6fb;
+}
+
+
+@media (max-width: 768px) {
+  .certificate-image-wrapper {
+    height: auto; 
+    min-height: 180px;  
+    max-height: 280px;  
+    display: block;  
+    padding: 0; 
+  }
+  
+  .certificate-card {
+    margin: 20px 10px; 
+  }
+  
+  .certificate-image {
+    width: 100%;  
+    height: auto;  
+    max-height: 280px;  
+    object-fit: contain;  
+    display: block;  
+  }
+  
+  .certificate-name {
+    font-size: 1.3em;
+  }
+  
+  .glide__arrow {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+    
     @media (max-width: 700px) {
       nav { flex-direction: row; align-items: center; padding: 12px 8px; position: relative; min-height: 56px; }
       .nav-title { font-size: 1.3em; margin-bottom: 0; line-height: 28px; }
@@ -350,9 +790,124 @@
       <a href="#projects" class="action-button">Explore My Work</a>
     </section>
     <section id="projects">
-      <h2 class="section-title" style="margin-top: 30px;">Featured Data Analysis Projects</h2>
+      <h2 class="section-title" style="margin-top: 30px;">Featured Project</h2>
       <div class="project-list" id="project-list"></div>
     </section>
+    
+    <!-- Internships Section -->
+<section id="internships">
+  <div class="container">
+    <h2 class="section-title">Internships</h2>
+    <div class="project-list" id="internship-list">
+      <!-- Internship cards will be added by JavaScript -->
+    </div>
+  </div>
+</section>
+    
+    
+   <section id="achievements">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+    
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <!-- Certificate 1 -->
+          <li class="glide__slide">
+            <div class="certificate-card">
+              <div class="certificate-image-wrapper">
+                <img src="certificate/Google Data Analytics Professional Certification.jpg" class="certificate-image">
+              </div>
+              <div class="certificate-info">
+                <h3 class="certificate-name">Google Data Analytics Professional Certificate</h3>
+                <p class="certificate-description">Industry-recognized program by Google covering data cleaning, analysis and visualization using SQL, R, Excel, and Tableau through hands-on projects.</p>
+                <a href="path/to/certificate1.pdf" target="_blank" class="view-certificate-btn">View Certificate</a>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Certificate 2 -->
+          <li class="glide__slide">
+            <div class="certificate-card">
+              <div class="certificate-image-wrapper">
+                <img src="certificate/Data Analytics Job Simulation from Deloitte by Forage.jpeg" alt="Certificate 2" class="certificate-image">
+              </div>
+              <div class="certificate-info">
+                <h3 class="certificate-name">Deloitte Australia Data Analytics Job Simulation</h3>
+                <p class="certificate-description">Forage-hosted program designed by Deloitte, simulating consulting projects involving data analysis and visualization using Tableau and Excel.</p>
+                <a href="path/to/certificate2.pdf" target="_blank" class="view-certificate-btn">View Certificate</a>
+              </div>
+            </div>
+          </li>
+          
+          <!-- Certificate 3 -->
+          <li class="glide__slide">
+            <div class="certificate-card">
+              <div class="certificate-image-wrapper">
+                <img src="certificate/Data Analyst ; Professional Certificate in Data Analysis from Institute of Management, Technology & Finance.jpg" alt="Python Course" class="certificate-image">
+              </div>
+              <div class="certificate-info">
+                <h3 class="certificate-name">Data Analyst Professional Certificate</h3>
+                <p class="certificate-description">Professional program by MTF Institute (Lisbon) covering data analysis, visualization and data-driven decision-making using Excel, SQL, Python, R and Tableau.</p>
+                <a href="#" target="_blank" class="view-certificate-btn">View Certificate</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Certificate 4 -->
+          <li class="glide__slide">
+            <div class="certificate-card">
+              <div class="certificate-image-wrapper">
+                <img src="certificate/Business Analyst Certification from Agile Enterprise Coach.jpeg" alt="Python Course" class="certificate-image">
+              </div>
+              <div class="certificate-info">
+                <h3 class="certificate-name">Business Analyst Certification</h3>
+                <p class="certificate-description">Assessment-based certification by Agile Enterprise Coach London, covering business analysis, stakeholder management and requirements engineering aligned with the BCS framework.</p>
+                <a href="#" target="_blank" class="view-certificate-btn">View Certificate</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Certificate 5 -->
+          <li class="glide__slide">
+            <div class="certificate-card">
+              <div class="certificate-image-wrapper">
+                <img src="certificate/Prompt Engineering Professional Certification from Institute of Management, Technology & Finance.jpeg" alt="Python Course" class="certificate-image">
+              </div>
+              <div class="certificate-info">
+                <h3 class="certificate-name">Prompt Engineering Professional Certification</h3>
+                <p class="certificate-description">Assessment-based certification by MTF Institute (Lisbon), validating knowledge of prompt engineering techniques, AI optimization and language model tuning.</p>
+                <a href="#" target="_blank" class="view-certificate-btn">View Certificate</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Certificate 6 -->
+          <li class="glide__slide">
+            <div class="certificate-card">
+              <div class="certificate-image-wrapper">
+                <img src="certificate/Critical Thinking for better judgement and Decision Making from LinkedIn Learning (CPE Certificate).jpeg" alt="Critical Thinking for better judgement and Decision Making" class="certificate-image">
+              </div>
+              <div class="certificate-info">
+                <h3 class="certificate-name">Critical Thinking for better judgement and Decision Making</h3>
+                <p class="certificate-description">NASBA-accredited LinkedIn Learning course focused on structured thinking, logical reasoning, and effective decision-making while minimizing cognitive bias.</p>
+               <a href="#" target="_blank" class="view-certificate-btn">View Certificate</a>
+              </div>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+
+  
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">‹</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+    
     <section id="skills">
       <h2 class="section-title">Core Analytical Skills</h2>
       <div class="skills-grid" id="skills-grid"></div>
@@ -380,12 +935,44 @@
       document.querySelectorAll('.hero').forEach(e => e.style.background = dark ? '#23272f' : 'linear-gradient(120deg, #e3f0ff 0%, #f8f9fa 100%)');
       document.querySelectorAll('.hero-title').forEach(e => e.style.color = dark ? '#e2e6ed' : '#222');
       document.querySelectorAll('.hero-subtitle').forEach(e => e.style.color = dark ? '#b6c2d1' : '#444');
-      document.querySelectorAll('.project-card').forEach(e => {
-        e.style.background = dark ? '#23272f' : '#fff';
-        e.style.color = dark ? '#e2e6ed' : '#222';
-        e.style.boxShadow = dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 8px 24px rgba(0,0,0,0.10)';
-        e.style.borderColor = dark ? '#23272f' : '#00c6fb';
-      });
+     
+
+document.querySelectorAll('.project-card').forEach(e => {
+  e.style.background = dark ? '#1e293b' : '#fff';
+  e.style.boxShadow = dark ? '0 8px 24px rgba(0,0,0,0.25)' : '0 8px 24px rgba(0,0,0,0.10)';
+});
+
+document.querySelectorAll('.card-content h3').forEach(e => {
+  e.style.color = dark ? '#00c6fb' : '#007acc';
+});
+
+document.querySelectorAll('.card-excerpt').forEach(e => {
+  e.style.color = dark ? '#cbd5e1' : '#333';
+});
+      
+      
+  
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    const isDark = document.body.classList.contains('dark-mode');
+    if (isDark) {
+      this.style.boxShadow = '0 0 60px rgba(0, 198, 251, 0.4)'; 
+    } else {
+      this.style.boxShadow = '0 0 60px rgba(0, 122, 204, 0.3)';  
+    }
+  });
+  
+  card.addEventListener('mouseleave', function() {
+    const isDark = document.body.classList.contains('dark-mode');
+    if (isDark) {
+      this.style.boxShadow = '0 8px 24px rgba(0,0,0,0.25)';
+    } else {
+      this.style.boxShadow = '0 8px 24px rgba(0,0,0,0.10)';
+    }
+  });
+});
+
+      
       document.querySelectorAll('.card-content h3').forEach(e => e.style.color = dark ? '#00c6fb' : '#007acc');
       document.querySelectorAll('.card-meta').forEach(e => e.style.color = dark ? '#b6c2d1' : '#6c757d');
       document.querySelectorAll('.card-excerpt').forEach(e => e.style.color = dark ? '#e2e6ed' : '#333');
@@ -396,6 +983,54 @@
         e.style.boxShadow = dark ? '0 8px 32px rgba(0,0,0,0.35)' : '0 4px 16px rgba(0,0,0,0.09)';
       });
       document.querySelectorAll('.skills-grid').forEach(e => e.style.background = dark ? 'transparent' : '');
+      
+
+document.querySelectorAll('.badge-tooltip').forEach(e => {
+  e.style.color = dark ? '#10C5F6' : '#007ACC';
+});
+         
+
+document.querySelectorAll('.certificate-card').forEach(e => {
+  e.style.background = dark ? '#1e293b' : '#fff';
+  e.style.border = dark ? '2px solid #00c6fb' : '2px solid #007acc';  // YE USE KARO
+  e.style.borderRadius = '20px';  // YE ADD KARO
+  e.style.boxShadow = dark ? '0 20px 60px rgba(0, 198, 251, 0.4)' : '0 20px 60px rgba(0, 122, 204, 0.3)';
+});
+      
+      document.querySelectorAll('.glide__slide--active .certificate-card').forEach(e => {
+        e.style.boxShadow = dark ? '0 0px 80px rgba(0, 198, 251, 0.6)' : '0 0px 80px rgba(0, 122, 204, 0.5)';
+      });
+      
+      document.querySelectorAll('.certificate-image-wrapper').forEach(e => {
+        e.style.background = dark ? 'linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%)' : 'linear-gradient(135deg, #e3f0ff 0%, #c2e9fb 100%)';
+      });
+      
+      document.querySelectorAll('.certificate-info').forEach(e => {
+        e.style.background = dark ? 'linear-gradient(to bottom, #1e293b 0%, #0f172a 100%)' : 'linear-gradient(to bottom, #fff 0%, #f8fcff 100%)';
+      });
+      
+      document.querySelectorAll('.certificate-name').forEach(e => {
+        e.style.color = dark ? '#00c6fb' : '#007acc';
+      });
+      
+      document.querySelectorAll('.certificate-description').forEach(e => {
+        e.style.color = dark ? '#cbd5e1' : '#555';
+      });
+      
+      document.querySelectorAll('.glide__arrow').forEach(e => {
+        e.style.background = dark ? 'rgba(0, 198, 251, 0.9)' : 'rgba(0, 122, 204, 0.9)';
+        e.style.boxShadow = dark ? '0 6px 20px rgba(0, 198, 251, 0.5)' : '0 6px 20px rgba(0, 122, 204, 0.4)';
+      });
+      
+      document.querySelectorAll('.glide__bullet').forEach(e => {
+        e.style.background = dark ? 'rgba(0, 198, 251, 0.4)' : 'rgba(0, 122, 204, 0.3)';
+      });
+      
+      document.querySelectorAll('.glide__bullet--active').forEach(e => {
+        e.style.boxShadow = dark ? '0 0 10px rgba(0, 198, 251, 0.6)' : '0 0 10px rgba(0, 122, 204, 0.5)';
+      });
+      // ============ END DARK MODE FOR CERTIFICATES ============
+      
       if (window.innerWidth <= 700) {
         document.querySelectorAll('.nav-links').forEach(e => e.style.background = dark ? '#23272f' : 'rgba(255,255,255,0.98)');
       }
@@ -473,21 +1108,73 @@
           <h3>${project.title}</h3>
           <p class="card-meta">${project.meta}</p>
           <p class="card-excerpt">${project.excerpt}</p>
-          <span class="read-more-link">View Details →</span>
+         <span class="view-details-btn">View Details</span>
         </div>
       `;
       projectList.appendChild(card);
     });
+    
+
+const internships = [
+  {
+    title: "AI Data Analyst Intern at Excelerate",
+    meta: "Duration: Mar 2025 – Apr 2025  |  Location: Remote <br> Supported by Rochester Institute of Technology",
+    excerpt: "Performed data cleaning, exploratory analysis and predictive modeling using Python, Excel, Google Sheets and Google Colab. Built a Random Forest churn model achieving 99.87% accuracy to improve user retention by identifying at-risk users.<br>Recognized as Star Performer.",
+    link: "internship_1.html",
+    hasBadge: true,  
+    badgeImage: "Images/Star Performer_AI Data Analyst Intern at Excelerate.png"  
+  },
+  {
+    title: "Data Visualization Associate Intern at Excelerate",
+    meta: "Duration: Apr 2025 - May 2025  |  Location: Remote <br> Supported by Saint Louis University",
+    excerpt: "Led a global team to design an end-to-end data pipeline and interactive Looker Studio dashboard. Consolidated 6 datasets (300K+ records) into a unified master table, delivering clear and actionable insights. <br>Recognized as Star Performer with a 90% overall 360° evaluation.",
+    link: "internship_2.html",
+    hasBadge: true,  
+    badgeImage: "Images/Star Performer_Data Visualization Associate Intern at Excelerate.png" 
+  }
+];
+
+// Generate internship cards
+const internshipList = document.getElementById('internship-list');
+internships.forEach(internship => {
+  const card = document.createElement('a');
+  card.className = 'project-card';
+  card.href = internship.link;
+  card.style.position = 'relative'; 
+  
+
+  const badgeHTML = internship.hasBadge 
+    ? `<div class="top-performer-badge">
+         <img src="${internship.badgeImage}" alt="Star Performer">
+         <span class="badge-tooltip">Star Performer</span>
+       </div>`
+    : '';
+  
+  card.innerHTML = `
+    ${badgeHTML}
+    <div class="card-content">
+      <h3>${internship.title}</h3>
+      <p class="card-meta">${internship.meta}</p>
+      <p class="card-excerpt">${internship.excerpt}</p>
+      <span class="view-details-btn">View Details</span>
+    </div>
+  `;
+  internshipList.appendChild(card);
+});
+    
     const skills = [
-      "Python, R, SQL",
-      "Tableau, Power BI, Matplotlib, Seaborn",
-      "PostgreSQL, BigQuery",
-      "Data Wrangling & Normalization",
-      "Feature Engineering",
-      "Data Validation & Quality Checks",
-      "Correlation & Causation Analysis",
-      "Anomaly Detection",
-      "Excel"
+"Excel, Google Sheets",
+"Python, R, SQL",
+"Tableau, Power BI, Looker Studio",
+"Pandas, NumPy, Matplotlib, Seaborn",
+"PostgreSQL, BigQuery",
+"Data Cleaning & Wrangling",
+"Feature Engineering",
+"Data Validation & Quality Checks",
+"Statistical Analysis & Data Interpretation",
+"Anomaly Detection"
+
+      
     ];
     const skillsGrid = document.getElementById('skills-grid');
     skills.forEach(skill => {
@@ -552,5 +1239,26 @@
       }
     });
   </script>
+  
+
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+
+<script>
+  new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 3,
+    focusAt: 'center',
+    gap: 30,
+    autoplay: 4000,
+    hoverpause: true,
+    animationDuration: 600,
+    breakpoints: {
+      1024: { perView: 2 },
+      768: { perView: 1 }
+    }
+  }).mount();
+
+</script>
 </body>
 </html>
