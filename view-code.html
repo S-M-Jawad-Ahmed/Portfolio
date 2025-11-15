@@ -15,9 +15,35 @@
     h1 { text-align: center; font-size: 2.2em; color: #007acc; margin-bottom: 30px; margin-top: 20px; font-weight: 800; letter-spacing: 1px; animation: fadeInUp 1.2s; }
     h2 { text-align: center; margin: 30px 0 10px 0; font-size: 1.5em; color: #333; }
     details { margin: 10px auto; max-width: 1200px; }
-    summary { cursor: pointer; font-size: 1.2em; font-weight: bold; padding: 10px; background-color: #ddd; border: 1px solid #ccc; }
-    summary { display: flex; flex-wrap: wrap; gap: 22px; justify-content: center; margin-bottom: 0px; animation: fadeInUp 1.2s; background: linear-gradient(90deg, #e3f0ff 0%, #c2e9fb 100%); border-radius: 32px; color: #007acc; font-size: 1.08em; font-weight: 700; padding: 14px 34px; box-shadow: 0 4px 16px rgba(0,0,0,0.09); transition: background 0.2s, transform 0.1s; animation: skillPop 0.7s cubic-bezier(.68,-0.55,.27,1.55) both; }
-    summary:hover { background: #b6e0fe; transform: scale(1.12); }
+    summary { 
+cursor: pointer; 
+font-size: 1.2em; 
+font-weight: 700; 
+padding: 10px; 
+background: linear-gradient(90deg, #007acc, #00c6fb); }
+
+    summary { 
+display: flex; 
+flex-wrap: wrap; 
+gap: 22px; 
+justify-content: center; 
+margin-bottom: 0px; 
+animation: fadeInUp 1.2s; 
+ background: linear-gradient(90deg, #007acc, #00c6fb);
+border-radius: 32px; 
+color: #fff;
+font-size: 1.08em; 
+font-weight: 700; 
+padding: 14px 34px; 
+box-shadow: none;
+ }
+
+    summary:hover { 
+ background: linear-gradient(90deg, #005f99, #00b6e6);
+ transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 122, 204, 0.5);
+}
+
     @keyframes summaryPop { 0% { transform: scale(0.7); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
     .theme-toggle { display: inline-block; cursor: pointer; margin-left: 24px; }
     
