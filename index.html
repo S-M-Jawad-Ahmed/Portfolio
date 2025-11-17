@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Data Analyst Portfolio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css" />
   <link rel="stylesheet" href="styles.08.css">
   <style>
@@ -180,7 +181,7 @@ body.dark-mode .action-button:hover {
   border: 2px solid #00c6fb;
 }
 
-/* Dark Mode Project Cards */
+
 body.dark-mode .project-card {
   background: #1e293b;
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
@@ -338,7 +339,8 @@ body.dark-mode .card-excerpt {
       transform: rotate(0deg) scale(1);
     }
     
-    /* View Details Button*/
+   
+   
 .view-details-btn {
   display: inline-block;
   background: linear-gradient(90deg, #007acc, #00c6fb);
@@ -372,8 +374,9 @@ body.dark-mode .view-details-btn:hover {
 }
     
     
-    
-    /*GLIDE CERTIFICATE SLIDER*/
+   
+   
+   
 #achievements {
   padding: 10px 10px;
   background: transparent;
@@ -550,7 +553,8 @@ body.dark-mode .view-certificate-btn:hover {
 }
 
 
-/* Certificate Tags */
+
+
 .certificate-tags {
   display: flex;
   flex-wrap: wrap;
@@ -587,7 +591,8 @@ body.dark-mode .certificate-tag:hover {
 }
 
 
-/* Top Performer Badge */
+
+
 .top-performer-badge {
   position: absolute;
   top: 15px;
@@ -611,7 +616,9 @@ body.dark-mode .certificate-tag:hover {
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
 }
 
-/* Tooltip for badge */
+
+
+
 .badge-tooltip {
   position: absolute;
   top: 50px;  
@@ -646,9 +653,223 @@ body.dark-mode .badge-tooltip {
 #internships .card-content h3 {
   padding-right: 50px;  
 }
+
+
+
+
+
+
+.contact-section {
+    padding: 10px 10px 0px 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    width: 100%;
+}
+
+.contact-title {
+    font-size:2em;
+    color:#00c6fb; 
+    font-weight:800; 
+    margin-bottom:18px; 
+}
+
+body.dark-mode .contact-title {
+    font-size:2em; 
+    color:#007acc; 
+    font-weight:800; 
+    margin-bottom:18px; 
+}
+
+.contact-form {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+
+
+.contact-form-group {
+    margin-bottom: 20px;
+}
+
+.contact-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+
+
+.contact-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background-color: #ffffff;
+    color: #333333;
+    box-sizing: border-box;  
+}
+
+.contact-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background-color: #ffffff;
+    color: #333333;
+    resize: none;
+    min-height: 120px;
+    overflow: hidden;
+    box-sizing: border-box;   
+}
+
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+    color: #999999;
+    opacity: 1;
+}
+
+
+.contact-input:focus,
+.contact-textarea:focus {
+    border: 2px solid transparent;
+    background-image: 
+        linear-gradient(#fff, #fff),
+        linear-gradient(135deg, #007acc, #00c6fb, #007acc);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 20px 60px rgba(0, 122, 204, 0.3);
+}
+
+
+body.dark-mode .contact-input,
+body.dark-mode .contact-textarea {
+    background-color: #1e293b !important;
+    color: #cbd5e1 !important;
+    border-color: #444444 !important;
+}
+
+
+body.dark-mode .contact-input::placeholder,
+body.dark-mode .contact-textarea::placeholder {
+    color: #64748b !important;
+}
+
+
+body.dark-mode .contact-input:focus,
+body.dark-mode .contact-textarea:focus {
+    background-image: 
+        linear-gradient(#1e293b, #1e293b),
+        linear-gradient(135deg, #4a9eff, #00c6fb, #4a9eff) !important;
+    background-origin: padding-box, border-box !important;
+    background-clip: padding-box, border-box !important;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 122, 204, 0.5) !important;
+}
+
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(90deg, #007acc, #00c6fb);
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.contact-btn:hover {
+    background: linear-gradient(90deg, #005f99, #00b6e6);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 122, 204, 0.5);
+}
+
+.contact-btn-submit {
+    margin-top: 10px;
+    width: auto;
+     display: block;       
+    margin-left: auto;   
+    margin-right: auto;   
+     box-sizing: border-box;  
+}
+
+body.dark-mode .contact-btn:hover {
+    box-shadow: 0 10px 30px rgba(0, 198, 251, 0.6);
+}
+
+
+.contact-status-message {
+    margin-top: 20px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    display: none;
+}
+
+.contact-status-success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.contact-status-error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+body.dark-mode .contact-status-success {
+    background-color: #1e4620;
+    color: #4caf50;
+    border-color: #2d5f2e;
+}
+
+body.dark-mode .contact-status-error {
+    background-color: #4a1f1f;
+    color: #f44336;
+    border-color: #6b2c2c;
+}
+
+
+.contact-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 60px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-action-buttons .contact-btn {
+    width: 75%;
+}
+
    
 
-/* Glide Navigation Arrows */
+
 .glide__arrows {
   position: absolute;
   width: 100%;
@@ -703,7 +924,7 @@ body.dark-mode .glide__arrow {
 }
 
 
-/* Section Title Dark Mode */
+
 body.dark-mode .section-title {
   color: #00c6fb;
 }
@@ -740,6 +961,16 @@ body.dark-mode .section-title {
     font-size: 20px;
   }
 }
+
+@media (max-width: 700px) {
+.contact-section {
+    padding: 10px 10px 0px 0px;
+    max-width: 250px;
+    margin: 0 auto;
+}
+    }
+  
+
     
     @media (max-width: 700px) {
       nav { flex-direction: row; align-items: center; padding: 12px 8px; position: relative; min-height: 56px; }
@@ -768,7 +999,7 @@ body.dark-mode .section-title {
         <a href="about.html" class="nav-link">About</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
-        <a href="mailto:SheikhMuhammadJawadAhmed001@gmail.com" class="nav-link">Contact</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
       <label class="theme-toggle" for="mode-toggle" aria-label="Toggle dark/light mode">
         <input type="checkbox" id="mode-toggle" />
@@ -915,6 +1146,52 @@ body.dark-mode .section-title {
       <h2 class="section-title">Core Analytical Skills</h2>
       <div class="skills-grid" id="skills-grid"></div>
     </section>
+    
+    
+    
+    
+    <!-- Contact Form Section -->
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <h2 class="section-title">Get In Touch</h2>
+        
+        <form id="contactForm" class="contact-form">
+            <div class="contact-form-group">
+                <label for="contactName" class="contact-label">Name</label>
+                <input type="text" id="contactName" name="name" class="contact-input" required>
+            </div>
+            
+            <div class="contact-form-group">
+                <label for="contactEmail" class="contact-label">Email</label>
+                <input type="email" id="contactEmail" name="email" class="contact-input" required>
+            </div>
+            
+            <div class="contact-form-group">
+                <label for="contactMessage" class="contact-label">Message</label>
+                <textarea id="contactMessage" name="message" rows="5" class="contact-textarea" required></textarea>
+            </div>
+            
+            <button type="submit" class="contact-btn contact-btn-submit">Send Message</button>
+            
+            <div id="contactStatusMessage" class="contact-status-message"></div>
+        </form>
+        
+        <div class="contact-action-buttons">
+            <a href="mailto:SheikhMuhammadJawadAhmed001@gmail.com" class="contact-btn contact-btn-email">
+                <span></span> Email Me
+            </a>
+            <a href="resume.pdf" download class="contact-btn contact-btn-resume">
+                <span></span> Download Resume
+            </a>
+        </div>
+    </div>
+</section>
+    
+    
+    
+    
+    
+    
   </main>
   <footer style="border-top: 1px solid #dee2e6; color: #6c757d; font-size: 1em; margin-top: 70px; padding: 28px; text-align: center; background: #fff;">
     <p>© <span id="year"></span> Sheikh Muhammad Jawad Ahmed</p>
@@ -1242,6 +1519,114 @@ internships.forEach(internship => {
     });
   </script>
   
+
+
+
+<script>
+
+const EMAILJS_PUBLIC_KEY = '6Z72VNHEytBxEt1D0';
+const EMAILJS_SERVICE_ID = 'service_aj081015';
+const EMAILJS_TEMPLATE_ID = 'template_ad34h8r';
+
+
+(function initializeEmailJS() {
+    emailjs.init(EMAILJS_PUBLIC_KEY); 
+})();
+
+
+
+const contactFormElement = document.getElementById('contactForm');
+
+if (contactFormElement) {
+    contactFormElement.addEventListener('submit', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        const submitButton = this.querySelector('.contact-btn-submit');
+        const statusMessage = document.getElementById('contactStatusMessage');
+        
+        
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        statusMessage.style.display = 'none';
+        statusMessage.className = 'contact-status-message';
+       
+        const formData = {
+            from_name: document.getElementById('contactName').value,
+            from_email: document.getElementById('contactEmail').value,
+            message: document.getElementById('contactMessage').value
+        };
+        
+        
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData)
+            .then(function(response) {
+                console.log('Email sent successfully!', response.status, response.text);
+                
+                
+                statusMessage.textContent = 'Message sent successfully!';
+                statusMessage.className = 'contact-status-message contact-status-success';
+                statusMessage.style.display = 'block';
+                
+               
+                contactFormElement.reset();
+                resetTextareaHeight();
+                
+               
+                setTimeout(function() {
+                    statusMessage.style.display = 'none';
+                }, 3000);
+                
+                
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+                
+            }, function(error) {
+                console.log('Email sending failed...', error);
+                
+               
+               statusMessage.innerHTML = 'Something went wrong.<br>Try sending an email directly.';
+                statusMessage.className = 'contact-status-message contact-status-error';
+                statusMessage.style.display = 'block';
+                
+                    setTimeout(function() {
+        statusMessage.style.display = 'none';
+    }, 3000);
+                
+               
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            });
+        
+        return false;
+    });
+}
+
+
+function setupTextareaAutoResize() {
+    const textarea = document.getElementById('contactMessage');
+    
+    if (textarea) {
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 400) + 'px';
+        });
+        
+        
+        textarea.style.height = '120px';
+    }
+}
+
+
+function resetTextareaHeight() {
+    const textarea = document.getElementById('contactMessage');
+    if (textarea) {
+        textarea.style.height = '120px';
+    }
+}
+
+setupTextareaAutoResize();
+
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
